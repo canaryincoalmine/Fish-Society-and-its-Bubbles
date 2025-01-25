@@ -14,5 +14,10 @@ func get_input():
 		(Input.is_action_pressed("down") as int) - (Input.is_action_pressed("up") as int)	
 	)
 	
-
+func _physics_process(delta: float) -> void:
+	var direction = get_input()
+	if direction.length() > 0:
+		velocity = velocity.lerp(direction.normalized() * SPEED , ACCELERATION)
+	else:
+		velocity = velocity.lerp(Vector2.ZERO, FRICTION)
 	move_and_slide()
