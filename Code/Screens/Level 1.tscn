@@ -1,8 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://byuldx83tk88w"]
+[gd_scene load_steps=5 format=3 uid="uid://bhyod40y51n4o"]
 
 [ext_resource type="PackedScene" uid="uid://c1atry1s104y0" path="res://Code/Player/Player.tscn" id="1_jh7pn"]
+[ext_resource type="Texture2D" uid="uid://t4j76h8b7ve0" path="res://Sprites/Maps/Level1/Main background.png" id="2_8mxin"]
+[ext_resource type="Texture2D" uid="uid://cr0he6bcwdvbm" path="res://Sprites/Maps/Level1/Underwater deck room.png" id="3_bcxjj"]
+[ext_resource type="Texture2D" uid="uid://bri8exuq6oqrs" path="res://Sprites/Maps/Level1/Underwater stairs .png" id="4_e5a6p"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_jh7pn")]
+position = Vector2(1147, 695)
 scale = Vector2(10, 10)
+
+[node name="MainBackground" type="Sprite2D" parent="."]
+show_behind_parent = true
+scale = Vector2(10, 10)
+texture = ExtResource("2_8mxin")
+
+[node name="UnderwaterDeckRoom" type="Sprite2D" parent="."]
+position = Vector2(191, 65)
+scale = Vector2(10, 10)
+texture = ExtResource("3_bcxjj")
+
+[node name="UnderwaterStairs" type="Sprite2D" parent="."]
+position = Vector2(1467, 177)
+scale = Vector2(10, 10)
+texture = ExtResource("4_e5a6p")
