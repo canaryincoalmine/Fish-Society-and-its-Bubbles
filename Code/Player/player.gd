@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var FRICTION = 0.04
 @export var ACCELERATION = 0.05
 
+@export var bullet_scene : PackedScene
+
 signal shoot
 
 func get_input():

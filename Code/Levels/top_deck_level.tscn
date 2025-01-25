@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://c81jaaqx7yuck"]
 
-[ext_resource type="Texture2D" uid="uid://oqvtsjter1xk" path="res://free.png" id="1_f6cwr"]
+[ext_resource type="Texture2D" uid="uid://dq4lyxx6v53eh" path="res://free.png" id="1_f6cwr"]
 [ext_resource type="PackedScene" uid="uid://c1atry1s104y0" path="res://Code/Player/Player.tscn" id="2_ws4uc"]
 [ext_resource type="PackedScene" uid="uid://uoaqfjsbcy2n" path="res://Code/Levels/shark.tscn" id="3_pxoqi"]
 
