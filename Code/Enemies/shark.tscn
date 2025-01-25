@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://uoaqfjsbcy2n"]
 
 [ext_resource type="Script" path="res://Code/Enemies/shark.gd" id="1_3odpp"]
-[ext_resource type="Texture2D" uid="uid://blikirhc2u4hu" path="res://octopus-jellyfish-shark-and-turtle-free-sprite-pixel-art/3/Attack.png" id="2_w8v3h"]
-[ext_resource type="Texture2D" uid="uid://cyautauwj4gcr" path="res://octopus-jellyfish-shark-and-turtle-free-sprite-pixel-art/3/Idle.png" id="3_f1a0s"]
+[ext_resource type="Texture2D" uid="uid://blikirhc2u4hu" path="res://Sprites/Entities/octopus-jellyfish-shark-and-turtle-free-sprite-pixel-art/3/Attack.png" id="2_w8v3h"]
+[ext_resource type="Texture2D" uid="uid://cyautauwj4gcr" path="res://Sprites/Entities/octopus-jellyfish-shark-and-turtle-free-sprite-pixel-art/3/Idle.png" id="3_f1a0s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_77jvc"]
 atlas = ExtResource("2_w8v3h")
