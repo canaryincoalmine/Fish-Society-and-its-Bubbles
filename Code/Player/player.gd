@@ -6,6 +6,9 @@ extends CharacterBody2D
 
 const BULLET_SCENE = preload("res://Code/Projectiles/Player_Bullet.tscn")
 
+#func _on_ready():
+	
+
 func get_input():
 	var mouse_position = get_viewport().get_mouse_position()
 	var mouse_distance = global_position.distance_to(mouse_position)
