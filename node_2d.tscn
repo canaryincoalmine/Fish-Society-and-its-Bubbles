@@ -2,7 +2,7 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" type="Area2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 
