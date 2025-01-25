@@ -28,6 +28,7 @@ func get_input():
 		bullet.global_position = mouth.global_position
 		bullet.rotation = rotation
 		reloaded = false
+		$ShootSound.play()
 		$Timer.start()
 
 func _physics_process(delta: float) -> void:

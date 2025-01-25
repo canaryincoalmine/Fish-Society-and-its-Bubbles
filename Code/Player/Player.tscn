@@ -1,7 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1atry1s104y0"]
+[gd_scene load_steps=14 format=3 uid="uid://c1atry1s104y0"]
 
 [ext_resource type="Script" path="res://Code/Player/player.gd" id="1_w8jt3"]
 [ext_resource type="Texture2D" uid="uid://l7vottbmlc1b" path="res://Sprites/Entities/Player.png" id="2_vbgjd"]
+[ext_resource type="AudioStream" uid="uid://dltvumvldul24" path="res://Audio/shoot_1.wav" id="3_vcukg"]
+[ext_resource type="AudioStream" uid="uid://t5xwsllhj8ni" path="res://Audio/shoot_2.wav" id="4_uet32"]
+[ext_resource type="AudioStream" uid="uid://1gevgr2kbhcw" path="res://Audio/shoot_3.wav" id="5_c0gph"]
+[ext_resource type="AudioStream" uid="uid://c36bw4g6n71k4" path="res://Audio/shoot_4.wav" id="6_hcura"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxlne"]
 atlas = ExtResource("2_vbgjd")
@@ -42,6 +46,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1y14a"]
 size = Vector2(8, 4)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jvf1e"]
+streams_count = 4
+stream_0/stream = ExtResource("3_vcukg")
+stream_1/stream = ExtResource("4_uet32")
+stream_2/stream = ExtResource("5_c0gph")
+stream_3/stream = ExtResource("6_hcura")
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_w8jt3")
 
@@ -58,5 +69,9 @@ position = Vector2(6, 0)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_jvf1e")
+volume_db = -10.306
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
