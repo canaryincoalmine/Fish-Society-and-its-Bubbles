@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bym5qev5s83s4"]
+[gd_scene load_steps=4 format=3 uid="uid://bym5qev5s83s4"]
 
 [ext_resource type="PackedScene" uid="uid://c1atry1s104y0" path="res://Code/Player/Player.tscn" id="1_tveyv"]
+[ext_resource type="Script" path="res://Code/Screens/bulletmanager.gd" id="2_5mrjb"]
+[ext_resource type="PackedScene" uid="uid://clsqauqva11rd" path="res://Code/Projectiles/Player_Bullet.tscn" id="3_nhld2"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_tveyv")]
 scale = Vector2(10, 10)
+
+[node name="BulletManager" type="Node2D" parent="."]
+script = ExtResource("2_5mrjb")
+bullet_scene = ExtResource("3_nhld2")
+
+[connection signal="shoot" from="Player" to="BulletManager" method="_on_player_shoot"]
