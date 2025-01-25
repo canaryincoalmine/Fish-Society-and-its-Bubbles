@@ -9,6 +9,7 @@ var reloaded = true
 const BULLET_SCENE = preload("res://Code/Projectiles/Player_Bullet.tscn")
 
 @onready var mouth: Marker2D = $Marker2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func get_input():
 	var mouse_position = get_viewport().get_mouse_position()
@@ -18,8 +19,10 @@ func get_input():
 			look_at(mouse_position)
 	if mouse_distance > 30:
 		velocity = velocity.lerp(transform.x * SPEED, ACCELERATION)
+		sprite.play("move")
 	else:
-		velocity = velocity.lerp(Vector2.ZERO, FRICTION)	
+		velocity = velocity.lerp(Vector2.ZERO, FRICTION)
+		sprite.play("idle")	
 	
 	if Input.is_action_just_pressed("shoot") and reloaded:
 		var direction = mouse_position - position
