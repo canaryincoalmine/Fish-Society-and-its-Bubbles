@@ -1,0 +1,113 @@
+[gd_scene load_steps=16 format=3 uid="uid://uoaqfjsbcy2n"]
+
+[ext_resource type="Texture2D" uid="uid://cyautauwj4gcr" path="res://octopus-jellyfish-shark-and-turtle-free-sprite-pixel-art/3/Idle.png" id="1_ncsr8"]
+[ext_resource type="Texture2D" uid="uid://blikirhc2u4hu" path="res://octopus-jellyfish-shark-and-turtle-free-sprite-pixel-art/3/Attack.png" id="1_v7ljl"]
+[ext_resource type="Script" path="res://Code/Levels/shark.gd" id="1_xu3ho"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77jvc"]
+atlas = ExtResource("1_v7ljl")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q87w"]
+atlas = ExtResource("1_v7ljl")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u778"]
+atlas = ExtResource("1_v7ljl")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay83m"]
+atlas = ExtResource("1_v7ljl")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhb8i"]
+atlas = ExtResource("1_v7ljl")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjxqq"]
+atlas = ExtResource("1_v7ljl")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5i7o"]
+atlas = ExtResource("1_ncsr8")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt5lg"]
+atlas = ExtResource("1_ncsr8")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0avxn"]
+atlas = ExtResource("1_ncsr8")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0q5n"]
+atlas = ExtResource("1_ncsr8")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a6elr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77jvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q87w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u778")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay83m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhb8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjxqq")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5i7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt5lg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0avxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0q5n")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q6gct"]
+height = 46.0
+
+[node name="Shark" type="CharacterBody2D"]
+position = Vector2(127, 88)
+script = ExtResource("1_xu3ho")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a6elr")
+animation = &"idle"
+frame_progress = 0.0188047
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_q6gct")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
