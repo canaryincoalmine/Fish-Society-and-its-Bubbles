@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export var SPEED = 200
-@export var FRICTION = 0.01
+@export var FRICTION = 0.04
 @export var ACCELERATION = 0.1
 
 func get_input():
