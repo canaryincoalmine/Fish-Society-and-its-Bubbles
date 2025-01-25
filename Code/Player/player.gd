@@ -12,7 +12,7 @@ const BULLET_SCENE = preload("res://Code/Projectiles/Player_Bullet.tscn")
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func get_input():
-	var mouse_position = get_viewport().get_mouse_position()
+	var mouse_position = get_global_mouse_position()
 	var mouse_distance = global_position.distance_to(mouse_position)
 	
 	if mouse_distance > 10:
