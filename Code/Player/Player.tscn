@@ -43,7 +43,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Player" type="Node2D"]
@@ -53,5 +53,6 @@ script = ExtResource("1_w8jt3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerBody"]
 sprite_frames = SubResource("SpriteFrames_vhsq0")
+frame_progress = 0.935174
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody"]
