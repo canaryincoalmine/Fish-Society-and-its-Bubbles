@@ -98,5 +98,4 @@ scale = Vector2(10, 10)
 [node name="Cod" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
 position = Vector2(973, 389)
 scale = Vector2(10, 10)
-collision_layer = 2
 target_to_chase = NodePath("../Player")

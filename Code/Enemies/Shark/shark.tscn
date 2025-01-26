@@ -92,6 +92,7 @@ height = 46.0
 
 [node name="Shark" type="CharacterBody2D"]
 position = Vector2(127, 88)
+collision_layer = 4
 script = ExtResource("1_3odpp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
