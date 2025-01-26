@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://74lnysi4i3b7"]
+[gd_scene load_steps=9 format=3 uid="uid://74lnysi4i3b7"]
 
+[ext_resource type="Script" path="res://Code/Enemies/Cod/cod.gd" id="1_2dsa0"]
 [ext_resource type="Texture2D" uid="uid://cm3kc8tyy24nq" path="res://Sprites/Entities/Enemies/Cod swim.png" id="1_iuvha"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h7yoc"]
@@ -42,6 +43,7 @@ animations = [{
 size = Vector2(13, 6)
 
 [node name="Cod" type="CharacterBody2D"]
+script = ExtResource("1_2dsa0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pimfg")
