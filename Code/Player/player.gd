@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var ACCELERATION = 0.05
 
 var reloaded = true
+var dash_available = true
 
 const BULLET_SCENE = preload("res://Code/Projectiles/Player_Bullet.tscn")
 
@@ -33,6 +34,15 @@ func get_input():
 		reloaded = false
 		$ShootSound.play()
 		$ShootTimer.start()
+		
+	if Input.is_action_just_pressed(("dash")) and dash_available:
+		# velocity add
+		velocity = Vector2(1000,0).rotated(rotation)
+		dash_available = false
+		$DashTimer.start()
+		$DashSound.play()
+		
+	
 
 func _physics_process(delta: float) -> void:
 	get_input()
@@ -51,3 +61,7 @@ func _on_walk_sound_timer_timeout():
 	$WalkSound.play()
 	$WalkSoundTimer.start()
 	
+
+
+func _on_dash_timer_timeout():
+	dash_available = true

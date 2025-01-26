@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c1atry1s104y0"]
+[gd_scene load_steps=30 format=3 uid="uid://c1atry1s104y0"]
 
 [ext_resource type="Script" path="res://Code/Player/player.gd" id="1_w8jt3"]
 [ext_resource type="Texture2D" uid="uid://l7vottbmlc1b" path="res://Sprites/Entities/Player.png" id="2_vbgjd"]
@@ -12,6 +12,10 @@
 [ext_resource type="AudioStream" uid="uid://dexi3qrid5o6q" path="res://Audio/swim_4.wav" id="10_5gpcv"]
 [ext_resource type="AudioStream" uid="uid://ip01hst836qn" path="res://Audio/swim_5.wav" id="11_5lagy"]
 [ext_resource type="AudioStream" uid="uid://bn52xuk5fdtij" path="res://Audio/swim_6.wav" id="12_c0yjj"]
+[ext_resource type="AudioStream" uid="uid://cy3kccnbin2ln" path="res://Audio/dash_1.wav" id="13_5kooe"]
+[ext_resource type="AudioStream" uid="uid://bmrhw43dshd8y" path="res://Audio/dash_2.wav" id="14_l0gr4"]
+[ext_resource type="AudioStream" uid="uid://btdhx6cqel4p1" path="res://Audio/dash_3.wav" id="15_4mxbi"]
+[ext_resource type="AudioStream" uid="uid://deih7uqo4yj4i" path="res://Audio/dash_4.wav" id="16_gn0vp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpi1o"]
 atlas = ExtResource("2_vbgjd")
@@ -101,6 +105,13 @@ stream_3/stream = ExtResource("10_5gpcv")
 stream_4/stream = ExtResource("11_5lagy")
 stream_5/stream = ExtResource("12_c0yjj")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ppohr"]
+streams_count = 4
+stream_0/stream = ExtResource("13_5kooe")
+stream_1/stream = ExtResource("14_l0gr4")
+stream_2/stream = ExtResource("15_4mxbi")
+stream_3/stream = ExtResource("16_gn0vp")
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_w8jt3")
 
@@ -123,6 +134,10 @@ volume_db = -10.306
 stream = SubResource("AudioStreamRandomizer_82x8i")
 volume_db = -11.95
 
+[node name="DashSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_ppohr")
+volume_db = -8.185
+
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 0.2
 
@@ -130,5 +145,8 @@ wait_time = 0.2
 wait_time = 0.305
 autostart = true
 
+[node name="DashTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="ShootTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="WalkSoundTimer" to="." method="_on_walk_sound_timer_timeout"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

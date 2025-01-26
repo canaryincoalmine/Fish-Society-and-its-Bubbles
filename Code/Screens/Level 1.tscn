@@ -1,13 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhyod40y51n4o"]
+[gd_scene load_steps=9 format=3 uid="uid://bhyod40y51n4o"]
 
 [ext_resource type="PackedScene" uid="uid://c1atry1s104y0" path="res://Code/Player/Player.tscn" id="1_jh7pn"]
+[ext_resource type="Script" path="res://Code/Screens/level_1.gd" id="1_p740o"]
 [ext_resource type="Texture2D" uid="uid://t4j76h8b7ve0" path="res://Sprites/Maps/Level1/Main background.png" id="2_8mxin"]
 [ext_resource type="Texture2D" uid="uid://cr0he6bcwdvbm" path="res://Sprites/Maps/Level1/Underwater deck room.png" id="3_bcxjj"]
 [ext_resource type="Texture2D" uid="uid://bri8exuq6oqrs" path="res://Sprites/Maps/Level1/Underwater stairs .png" id="4_e5a6p"]
 [ext_resource type="Texture2D" uid="uid://cqhyboxt7ukbf" path="res://Sprites/Maps/Level1/Underwater stairs top layer.png" id="5_82kac"]
 [ext_resource type="Texture2D" uid="uid://cnl8aj5qh7qhp" path="res://Sprites/Maps/Level1/Ship top layer.png" id="6_tsaih"]
+[ext_resource type="AudioStream" uid="uid://bi3m32ns5vnuq" path="res://Audio/main_soundtrack.wav" id="8_8biuh"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_p740o")
 
 [node name="Player" parent="." instance=ExtResource("1_jh7pn")]
 position = Vector2(973, 389)
@@ -57,3 +60,7 @@ texture = ExtResource("5_82kac")
 position = Vector2(-3.46945e-18, 9.09495e-13)
 scale = Vector2(10, 10)
 texture = ExtResource("6_tsaih")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_8biuh")
+volume_db = -12.18
