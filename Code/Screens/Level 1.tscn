@@ -31,38 +31,41 @@ volume_db = -12.18
 navigation_polygon = SubResource("NavigationPolygon_eeqhf")
 navigation_layers = 3
 
-[node name="MainBackground" type="Sprite2D" parent="NavigationRegion2D"]
-show_behind_parent = true
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D"]
 scale = Vector2(10, 10)
+
+[node name="MainBackground" type="Sprite2D" parent="NavigationRegion2D/StaticBody2D"]
+show_behind_parent = true
+scale = Vector2(1, 1)
 texture = ExtResource("2_8mxin")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D/MainBackground"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/MainBackground/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/StaticBody2D"]
 position = Vector2(0, 26.4)
 build_mode = 1
 polygon = PackedVector2Array(-183.4, -94.8, -170.7, -107.1, -117.262, -107.142, 80.7, -107.3, 158.3, -73, 191.7, -39.6, 192.6, 33.1, 162.2, 63, 81.4, 97.5, -175.7, 98, -183.5, 89.9)
 
-[node name="UnderwaterDeckRoom" type="Sprite2D" parent="NavigationRegion2D"]
-show_behind_parent = true
+[node name="StaticBody2D2" type="StaticBody2D" parent="NavigationRegion2D"]
 position = Vector2(191, 65)
 scale = Vector2(10, 10)
+
+[node name="UnderwaterDeckRoom" type="Sprite2D" parent="NavigationRegion2D/StaticBody2D2"]
+show_behind_parent = true
+scale = Vector2(1, 1)
 texture = ExtResource("3_bcxjj")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D/UnderwaterDeckRoom"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/UnderwaterDeckRoom/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/StaticBody2D2"]
 polygon = PackedVector2Array(-60.6, 38.5, -57.2, 38.5, 51.8, 38.8, 59.7, 38.6, 59.8, -32.8, -60.7, -34.2)
 
-[node name="UnderwaterStairs" type="Sprite2D" parent="NavigationRegion2D"]
-show_behind_parent = true
+[node name="StaticBody2D3" type="StaticBody2D" parent="NavigationRegion2D"]
 position = Vector2(1467, 177)
 scale = Vector2(10, 10)
+
+[node name="UnderwaterStairs" type="Sprite2D" parent="NavigationRegion2D/StaticBody2D3"]
+show_behind_parent = true
+scale = Vector2(1, 1)
 texture = ExtResource("4_e5a6p")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D/UnderwaterStairs"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/UnderwaterStairs/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/StaticBody2D3"]
 polygon = PackedVector2Array(-19.5, 15.9, 18.9, 16.2, 18.8, -13.2, -19.7, -13.3, -19.5, -11, 12.3, 5.4, 14.4, 11.7, -19.5, 11.7)
 
 [node name="UnderwaterStairsTopLayer" type="Sprite2D" parent="NavigationRegion2D"]
