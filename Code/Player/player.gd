@@ -85,9 +85,6 @@ func receiveHP(amount):
 	var new_health = health + amount
 	health = min(max_health, new_health)
 	Global.hud.update_simple(health)
-	
-
-
 
 func _on_dash_timer_timeout():
 	dash_available = true
@@ -97,16 +94,14 @@ func _on_ready():
 	Global.player = self
 
 
-
 func _on_enemy_collision_detector_area_entered(area):
 	if area.has_method("get_parent"):
 		var enemy = area.get_parent() 
 		if "id" in enemy and enemy.id == "enemy":
 			var direction = (position - enemy.position).normalized()
 			velocity += direction * 1000
-			print("collided with enemy")
 			take_damage(1)
-			
+
 func take_damage(damage):
 	var new_health = health - damage
 	health = max(new_health, 0)
@@ -115,10 +110,4 @@ func take_damage(damage):
 		die()
 		
 func die():
-	if $Camera2D:
-		var camera = $Camera2D
-		camera.get_parent().remove_child(camera)
-		get_tree().get_root().add_child(camera)  # Reparent the camera to the scene root
-		camera.position = position  # Keep the camera at the player's last position
-	
-	queue_free()  # Remove the player
+	get_tree().change_scene_to_file("res://Code/Screens/DeathScreen.tscn")

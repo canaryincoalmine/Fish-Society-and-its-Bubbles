@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://74lnysi4i3b7"]
+[gd_scene load_steps=10 format=3 uid="uid://74lnysi4i3b7"]
 
 [ext_resource type="Script" path="res://Code/Enemies/Cod/cod.gd" id="1_2dsa0"]
 [ext_resource type="Texture2D" uid="uid://cm3kc8tyy24nq" path="res://Sprites/Entities/Enemies/Cod swim.png" id="1_iuvha"]
@@ -39,8 +39,13 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtx78"]
-size = Vector2(13, 6)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jykvr"]
+radius = 3.0
+height = 15.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xu6t2"]
+radius = 3.0
+height = 15.0
 
 [node name="Cod" type="CharacterBody2D"]
 collision_layer = 4
@@ -53,9 +58,11 @@ animation = &"move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_qtx78")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_jykvr")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
 debug_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -64,7 +71,8 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_qtx78")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xu6t2")
 
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 3.0
