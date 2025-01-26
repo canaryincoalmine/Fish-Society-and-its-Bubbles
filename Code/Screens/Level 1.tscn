@@ -122,3 +122,6 @@ target_to_chase = NodePath("../Player")
 
 [node name="Heart" parent="." instance=ExtResource("14_frw6p")]
 position = Vector2(234, 812)
+
+[node name="Heart2" parent="." instance=ExtResource("14_frw6p")]
+position = Vector2(-542, 772)

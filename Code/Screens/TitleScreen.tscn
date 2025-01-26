@@ -1,0 +1,77 @@
+[gd_scene load_steps=14 format=3 uid="uid://bgpbevtqh4pc1"]
+
+[ext_resource type="Texture2D" uid="uid://csr7glocdmlr7" path="res://Sprites/Icons/Menus/Play Button.png" id="1_awcyc"]
+[ext_resource type="Texture2D" uid="uid://x84067snv3oh" path="res://Sprites/Icons/Menus/Selected Play Button.png" id="1_jtm8d"]
+[ext_resource type="Texture2D" uid="uid://cvoats0r7in8q" path="res://Sprites/Icons/Menus/Title.png" id="2_251ji"]
+[ext_resource type="Script" path="res://Code/Screens/button.gd" id="3_cs5dw"]
+[ext_resource type="Texture2D" uid="uid://dnksm1qfrqhtx" path="res://Sprites/Icons/Menus/Selected Exit Button.png" id="3_mna44"]
+[ext_resource type="Texture2D" uid="uid://cehg1n1yiar8k" path="res://Sprites/Icons/Menus/Exit Button.png" id="4_fm2bj"]
+[ext_resource type="Texture2D" uid="uid://t4j76h8b7ve0" path="res://Sprites/Maps/Level1/Main background.png" id="4_ynhj6"]
+[ext_resource type="Script" path="res://Code/Screens/exit.gd" id="8_dlr6n"]
+
+[sub_resource type="Theme" id="Theme_y6fvi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lfs2t"]
+texture = ExtResource("1_jtm8d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aha2y"]
+texture = ExtResource("1_awcyc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nvgnc"]
+texture = ExtResource("3_mna44")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qpmq3"]
+texture = ExtResource("4_fm2bj")
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -32.0
+offset_right = 3.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(955, 484)
+scale = Vector2(4, 4)
+texture = ExtResource("4_ynhj6")
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(944, 355)
+scale = Vector2(4, 4)
+texture = ExtResource("2_251ji")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 600.0
+offset_right = 940.0
+offset_bottom = 668.0
+scale = Vector2(2, 2)
+theme = SubResource("Theme_y6fvi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lfs2t")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aha2y")
+action_mode = 0
+icon_alignment = 1
+script = ExtResource("3_cs5dw")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 800.0
+offset_right = 940.0
+offset_bottom = 868.0
+scale = Vector2(2, 2)
+theme_override_styles/hover = SubResource("StyleBoxTexture_nvgnc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qpmq3")
+script = ExtResource("8_dlr6n")
+
+[connection signal="pressed" from="Play" to="Play" method="_on_play_pressed"]
+[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
+[connection signal="pressed" from="Exit" to="Play" method="_on_exit_pressed"]
