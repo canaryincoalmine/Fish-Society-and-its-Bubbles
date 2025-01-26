@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c41rcf2jw8kwi"
-path="res://.godot/imported/Level 2 top layer.png-7c50f80736aa1f3d9dcc75d08e22af92.ctex"
+uid="uid://b30hnlpr74mhx"
+path="res://.godot/imported/Selected Replay Button.png.png-ddba0bd294117735372d6dafb066c34c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Maps/Level2/Level 2 top layer.png"
-dest_files=["res://.godot/imported/Level 2 top layer.png-7c50f80736aa1f3d9dcc75d08e22af92.ctex"]
+source_file="res://Sprites/Icons/Menus/Selected Replay Button.png.png"
+dest_files=["res://.godot/imported/Selected Replay Button.png.png-ddba0bd294117735372d6dafb066c34c.ctex"]
 
 [params]
 

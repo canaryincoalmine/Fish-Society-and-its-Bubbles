@@ -110,17 +110,18 @@ scale = Vector2(10, 10)
 position = Vector2(-871, 906)
 scale = Vector2(10, 10)
 collision_layer = 1
-collision_mask = 1
 target_to_chase = NodePath("../Player")
 
 [node name="Cod2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
 position = Vector2(-295, -633)
 scale = Vector2(10, 10)
 collision_layer = 1
-collision_mask = 1
 target_to_chase = NodePath("../Player")
 
 [node name="HUD" parent="." instance=ExtResource("12_8fd6g")]
 
 [node name="Heart" parent="." instance=ExtResource("14_frw6p")]
 position = Vector2(234, 812)
+
+[node name="Heart2" parent="." instance=ExtResource("14_frw6p")]
+position = Vector2(-542, 772)

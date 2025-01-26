@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c41rcf2jw8kwi"
-path="res://.godot/imported/Level 2 top layer.png-7c50f80736aa1f3d9dcc75d08e22af92.ctex"
+uid="uid://cewxh4i7mx335"
+path="res://.godot/imported/Game Over-1.png(1).png-b46652eb6719806e2b5262ac477caaa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Maps/Level2/Level 2 top layer.png"
-dest_files=["res://.godot/imported/Level 2 top layer.png-7c50f80736aa1f3d9dcc75d08e22af92.ctex"]
+source_file="res://Sprites/Icons/Menus/Game Over-1.png(1).png"
+dest_files=["res://.godot/imported/Game Over-1.png(1).png-b46652eb6719806e2b5262ac477caaa2.ctex"]
 
 [params]
 

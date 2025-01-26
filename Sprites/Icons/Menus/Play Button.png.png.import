@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c41rcf2jw8kwi"
-path="res://.godot/imported/Level 2 top layer.png-7c50f80736aa1f3d9dcc75d08e22af92.ctex"
+uid="uid://b4qkpfqcvvdcw"
+path="res://.godot/imported/Play Button.png.png-92dfce6fd29990499c5a98ef3a8191a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Maps/Level2/Level 2 top layer.png"
-dest_files=["res://.godot/imported/Level 2 top layer.png-7c50f80736aa1f3d9dcc75d08e22af92.ctex"]
+source_file="res://Sprites/Icons/Menus/Play Button.png.png"
+dest_files=["res://.godot/imported/Play Button.png.png-92dfce6fd29990499c5a98ef3a8191a6.ctex"]
 
 [params]
 

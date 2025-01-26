@@ -149,7 +149,16 @@ autostart = true
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_1y14a")
 
+[node name="EnemyCollisionDetector" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollisionDetector"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_1y14a")
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="WalkSoundTimer" to="." method="_on_walk_sound_timer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="area_entered" from="EnemyCollisionDetector" to="." method="_on_enemy_collision_detector_area_entered"]

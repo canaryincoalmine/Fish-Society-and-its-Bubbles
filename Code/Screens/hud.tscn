@@ -24,11 +24,3 @@ texture = ExtResource("1_enqvv")
 [node name="3" type="TextureRect" parent="HeartContainer"]
 layout_mode = 2
 texture = ExtResource("1_enqvv")
-
-[node name="4" type="TextureRect" parent="HeartContainer"]
-layout_mode = 2
-texture = ExtResource("1_enqvv")
-
-[node name="5" type="TextureRect" parent="HeartContainer"]
-layout_mode = 2
-texture = ExtResource("1_enqvv")
