@@ -4,12 +4,12 @@ extends CharacterBody2D
 @export var target_to_chase: CharacterBody2D
 
 var id = "enemy"
-var health = 3
+var health = 5
 
 var dash_ready = true
 var dashing = false
 
-const SPEED = 100.0
+const SPEED = 70.0
 
 func _ready() -> void:
 	$AnimatedSprite2D.play()
@@ -31,10 +31,15 @@ func _physics_process(delta: float) -> void:
 		if dash_ready:
 			dash_ready = false
 			dashing = true
-			velocity = velocity*7
+			print("dashing")
+			velocity = velocity*15
 			$DashTimer.start()
-			await get_tree().create_timer(0.7).timeout
+			$AnimatedSprite2D.animation = "attack"
+			$AnimatedSprite2D.play()
+			await get_tree().create_timer(0.8).timeout
 			dashing = false
+			$AnimatedSprite2D.animation = "move"
+			$AnimatedSprite2D.play()
 		move_and_slide()
 	
 func take_damage(damage):
