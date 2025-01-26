@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cva2gw57wx4ko"]
+[gd_scene load_steps=9 format=3 uid="uid://cva2gw57wx4ko"]
 
 [ext_resource type="Texture2D" uid="uid://ci1v3svy6585o" path="res://Sprites/Icons/Heart.png" id="1_gmhd8"]
 [ext_resource type="Script" path="res://Code/Pickups/heart.gd" id="1_jiwn3"]
@@ -39,7 +39,10 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Heart" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_qbvts"]
+radius = 29.0
+
+[node name="Heart" type="CharacterBody2D"]
 script = ExtResource("1_jiwn3")
 
 [node name="HeartAnimation" type="AnimatedSprite2D" parent="."]
@@ -47,3 +50,6 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_scdk5")
 frame = 1
 frame_progress = 0.678421
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qbvts")

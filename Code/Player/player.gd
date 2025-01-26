@@ -65,3 +65,7 @@ func _on_walk_sound_timer_timeout():
 
 func _on_dash_timer_timeout():
 	dash_available = true
+
+
+func _on_ready():
+	Global.player = self
