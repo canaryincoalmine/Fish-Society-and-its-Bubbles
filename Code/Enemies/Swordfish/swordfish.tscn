@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dcp15oo1olg6d"]
+[gd_scene load_steps=16 format=3 uid="uid://dcp15oo1olg6d"]
 
 [ext_resource type="Script" path="res://Code/Enemies/Swordfish/swordfish.gd" id="1_2dsa0"]
 [ext_resource type="Texture2D" uid="uid://dvlm8oc54ejw6" path="res://Sprites/Entities/Enemies/Swordfish swim.png" id="2_fseek"]
 [ext_resource type="Texture2D" uid="uid://d3wbpk1xx467l" path="res://Sprites/Entities/Enemies/Swordfish attack.png" id="2_p7sca"]
+[ext_resource type="Texture2D" uid="uid://bgbfl1nq3cd0t" path="res://Sprites/Entities/Enemies/Swordfish shadow.png" id="4_qxqyn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hm537"]
 atlas = ExtResource("2_p7sca")
@@ -108,5 +109,9 @@ shape = SubResource("RectangleShape2D_dihcl")
 
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("4_qxqyn")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
