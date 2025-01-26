@@ -16,3 +16,8 @@ func _process(delta):
 func _on_go_to_next_level_body_entered(body: Node2D) -> void:
 	if body.name == 'Player':
 		get_tree().change_scene_to_file('res://Code/Screens/Level 2.tscn')
+
+
+func _on_win_condition_body_entered(body: Node2D) -> void:
+	if body.name == 'Player':
+		get_tree().change_scene_to_file("res://Code/Screens/EndScreen.tscn")

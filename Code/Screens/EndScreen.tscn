@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bkrb74kxek3wn"]
+[gd_scene load_steps=14 format=3 uid="uid://delgm4h2sscdp"]
 
 [ext_resource type="Texture2D" uid="uid://ctsfdoipwyhx8" path="res://Sprites/Maps/End Screen.png" id="1_6kpjk"]
 [ext_resource type="Texture2D" uid="uid://bcxn02p78uyps" path="res://Sprites/Icons/Menus/Fin.png" id="2_kmd5x"]
@@ -74,6 +74,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_nvgnc")
 theme_override_styles/normal = SubResource("StyleBoxTexture_qpmq3")
 script = SubResource("GDScript_hkrvt")
 
-[connection signal="pressed" from="Replay" to="Replay" method="_on_pressed"]
 [connection signal="pressed" from="Replay" to="Replay" method="_on_play_pressed"]
+[connection signal="pressed" from="Replay" to="Replay" method="_on_pressed"]
 [connection signal="pressed" from="Exit" to="Replay" method="_on_exit_pressed"]
