@@ -37,17 +37,25 @@ volume_db = -12.18
 stream = ExtResource("4_icb3t")
 volume_db = -15.768
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(10, 10)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, 26.4)
+build_mode = 1
+polygon = PackedVector2Array(-183.4, -94.8, -170.7, -107.1, -117.262, -107.142, 80.7, -107.3, 158.3, -73, 191.7, -39.6, 192.6, 33.1, 162.2, 63, 81.4, 97.5, -175.7, 98, -183.5, 89.9)
+
 [node name="NavigationRegion2D2" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_yqgwh")
-
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D2"]
-scale = Vector2(10, 10)
-vertices = PackedVector2Array(-170.7, -80.7, -183.5, -68.3, -183.5, 105.6, -173.5, 115.5, -171, 124, 81, 124, 85, 116, 155.5, 86.4, 157, 86, 192.6, 50.4, 192.5, -10.6, 159, -44, 81, -78, 79.5, -80.9)
 
 [node name="MainBackground" type="Sprite2D" parent="NavigationRegion2D2"]
 show_behind_parent = true
 scale = Vector2(10, 10)
 texture = ExtResource("2_8mxin")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D2"]
+scale = Vector2(10, 10)
+vertices = PackedVector2Array(-170.7, -80.7, -183.5, -68.3, -183.5, 105.6, -173.5, 115.5, -171, 124, 81, 124, 85, 116, 155.5, 86.4, 157, 86, 192.6, 50.4, 192.5, -10.6, 159, -44, 81, -78, 79.5, -80.9)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="NavigationRegion2D2"]
 position = Vector2(191, 65)
