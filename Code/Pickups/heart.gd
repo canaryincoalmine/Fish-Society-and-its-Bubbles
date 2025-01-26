@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (Global.player != null and position.distance_to(Global.player.position) <= follow_range):
+	if (Global.player != null and Global.player.health < Global.player.max_health and position.distance_to(Global.player.position) <= follow_range):
 		acceleration = Vector2(speed,0).rotated(position.angle_to_point(Global.player.position))
 		velocity += acceleration
 		position += velocity * delta
@@ -20,5 +20,6 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	Global.player.receiveHP(1)
-	queue_free()
+	if Global.player.health < Global.player.max_health:
+		Global.player.receiveHP(1)
+		queue_free()

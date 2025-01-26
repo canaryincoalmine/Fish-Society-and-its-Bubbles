@@ -6,9 +6,13 @@ extends CharacterBody2D
 var id = "enemy"
 var health = 3
 
-const SPEED = 180.0
+var dash_ready = true
+var dashing = false
+
+const SPEED = 100.0
 
 func _ready() -> void:
+	$AnimatedSprite2D.play()
 	set_physics_process(false)
 	call_deferred("wait_for_physics")
 	
@@ -22,10 +26,22 @@ func _physics_process(delta: float) -> void:
 			return
 		look_at(target_to_chase.global_position)
 		navigation_agent.target_position = target_to_chase.global_position
-		velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
+		if dashing == false:
+			velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
+		if dash_ready:
+			dash_ready = false
+			dashing = true
+			velocity = velocity*5
+			$DashTimer.start()
+			await get_tree().create_timer(1).timeout
+			dashing = false
 		move_and_slide()
 	
 func take_damage(damage):
 	health -= damage
 	if health <= 0:
 		queue_free();
+
+
+func _on_dash_timer_timeout():
+	dash_ready = true
