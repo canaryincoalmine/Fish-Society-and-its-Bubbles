@@ -61,7 +61,7 @@ func process_recoil():
 
 func _physics_process(delta: float) -> void:
 	get_input()
-	$Shadow.global_position = global_position + Vector2(0, 10)
+	$Shadow.global_position = global_position + Vector2(0, 30)
 	move_and_slide()
 	#var collision = move_and_collide(Vector2(velocity.x, velocity.y) * delta)
 	#if collision and "id" in collision.get_collider() and collision.get_collider().id == "enemy":
