@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b2a5voaaaeocn" path="res://Audio/ocean_ambience_1.wav" id="4_icb3t"]
 [ext_resource type="Texture2D" uid="uid://cqhyboxt7ukbf" path="res://Sprites/Maps/Level1/Underwater stairs top layer.png" id="5_82kac"]
 [ext_resource type="Texture2D" uid="uid://cnl8aj5qh7qhp" path="res://Sprites/Maps/Level1/Ship top layer.png" id="6_tsaih"]
-[ext_resource type="PackedScene" uid="uid://74lnysi4i3b7" path="res://Code/Enemies/Cod/cod.tscn" id="7_5okh8"]
+[ext_resource type="PackedScene" uid="uid://74lnysi4i3b7" path="res://Code/Enemies/Cod/Cod.tscn" id="7_5okh8"]
 [ext_resource type="Texture2D" uid="uid://dhhp18k04y1hh" path="res://Sprites/Maps/Level1/Deck room top layer.png" id="7_unpje"]
 [ext_resource type="AudioStream" uid="uid://bi3m32ns5vnuq" path="res://Audio/main_soundtrack.wav" id="8_8biuh"]
 [ext_resource type="PackedScene" uid="uid://dqhkrfhkhdwoh" path="res://Code/Screens/hud.tscn" id="12_8fd6g"]
