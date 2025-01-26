@@ -13,9 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bi3m32ns5vnuq" path="res://Audio/main_soundtrack.wav" id="8_8biuh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_eeqhf"]
-vertices = PackedVector2Array(1975.02, -1131.01, 1982.96, 1504.91, 1930.01, 772.117, 1926.99, -136.156, 1588.75, -474.391, 1568.65, 1134.5, 809.109, -819, -1921.01, -1134.98, -1172.63, -817.422, -1711.05, -817, -1844.01, -688.227, -1924.98, 1473.08, -1840.99, 1318.13, -1710.16, 1450.01, 802.961, 1446)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4), PackedInt32Array(5, 2, 1), PackedInt32Array(0, 4, 6), PackedInt32Array(7, 0, 6, 8, 9), PackedInt32Array(7, 9, 10), PackedInt32Array(11, 7, 10, 12), PackedInt32Array(11, 12, 13), PackedInt32Array(1, 11, 13, 14), PackedInt32Array(1, 14, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-1931, -1145, 1985, -1141, 1993, 1515, -1935, 1483)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1834, -659, -1700, -807, 808, -809, 1581, -468, 1918, -132, 1920, 596, 1648.84, 878.543, 810, 1247, -1746, 1242, -1835, 1169)])
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_p740o")
@@ -31,6 +29,7 @@ volume_db = -12.18
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_eeqhf")
+navigation_layers = 3
 
 [node name="MainBackground" type="Sprite2D" parent="NavigationRegion2D"]
 show_behind_parent = true
@@ -42,7 +41,7 @@ texture = ExtResource("2_8mxin")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/MainBackground/StaticBody2D"]
 position = Vector2(0, 26.4)
 build_mode = 1
-polygon = PackedVector2Array(-183.4, -94.8, -170.7, -107.1, -117.262, -107.142, 80.7, -107.3, 158.3, -73, 191.7, -39.6, 192, 50.4, 156.3, 86.2, 80.1, 117.2, -170.6, 117.6, -183.1, 105)
+polygon = PackedVector2Array(-183.4, -94.8, -170.7, -107.1, -117.262, -107.142, 80.7, -107.3, 158.3, -73, 191.7, -39.6, 192.6, 33.1, 162.2, 63, 81.4, 97.5, -175.7, 98, -183.5, 89.9)
 
 [node name="UnderwaterDeckRoom" type="Sprite2D" parent="NavigationRegion2D"]
 show_behind_parent = true

@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bym5qev5s83s4"]
+[gd_scene load_steps=4 format=3 uid="uid://bym5qev5s83s4"]
 
 [ext_resource type="PackedScene" uid="uid://c1atry1s104y0" path="res://Code/Player/Player.tscn" id="1_tveyv"]
+[ext_resource type="PackedScene" uid="uid://74lnysi4i3b7" path="res://Code/Enemies/Cod/Cod.tscn" id="2_1b68g"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3s3vn"]
+vertices = PackedVector2Array(816.82, -368.039, 883.07, 396.703, -781.023, 353.25, -782.969, -375.953)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-793, -386, 826, -378, 894, 407, -791, 363)])
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_tveyv")]
 scale = Vector2(10, 10)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_3s3vn")
+
+[node name="Cod" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("2_1b68g")]
+position = Vector2(334, 34)
+scale = Vector2(10, 10)
+motion_mode = 1
+target_to_chase = NodePath("../Player")
