@@ -85,7 +85,6 @@ animations = [{
 size = Vector2(13, 6)
 
 [node name="Swordfish" type="CharacterBody2D"]
-scale = Vector2(8, 8)
 script = ExtResource("1_2dsa0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
