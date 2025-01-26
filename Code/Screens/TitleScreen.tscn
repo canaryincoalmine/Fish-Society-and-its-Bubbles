@@ -75,6 +75,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_nvgnc")
 theme_override_styles/normal = SubResource("StyleBoxTexture_qpmq3")
 script = SubResource("GDScript_hkrvt")
 
-[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
 [connection signal="pressed" from="Play" to="Play" method="_on_play_pressed"]
+[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
 [connection signal="pressed" from="Exit" to="Play" method="_on_exit_pressed"]
