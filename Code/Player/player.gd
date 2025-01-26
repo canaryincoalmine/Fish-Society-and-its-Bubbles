@@ -61,6 +61,7 @@ func process_recoil():
 
 func _physics_process(delta: float) -> void:
 	get_input()
+	$Shadow.global_position = global_position + Vector2(0, 10)
 	move_and_slide()
 	#var collision = move_and_collide(Vector2(velocity.x, velocity.y) * delta)
 	#if collision and "id" in collision.get_collider() and collision.get_collider().id == "enemy":
@@ -68,11 +69,6 @@ func _physics_process(delta: float) -> void:
 		
 func handle_enemy_collision(enemy):
 	queue_free()
-	
-func _process(delta: float) -> void:
-	$Shadow.global_position = global_position + Vector2(0, 10)  # Offset shadow below player
-	
-
 
 func _on_timer_timeout() -> void:
 	reloaded = true

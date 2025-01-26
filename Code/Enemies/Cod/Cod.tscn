@@ -1,22 +1,22 @@
 [gd_scene load_steps=10 format=3 uid="uid://74lnysi4i3b7"]
 
-[ext_resource type="Script" path="res://Code/Enemies/Cod/cod.gd" id="1_2dsa0"]
-[ext_resource type="Texture2D" uid="uid://cm3kc8tyy24nq" path="res://Sprites/Entities/Enemies/Cod swim.png" id="1_iuvha"]
+[ext_resource type="Script" path="res://Code/Enemies/Cod/cod.gd" id="1_bt5gk"]
+[ext_resource type="Texture2D" uid="uid://cm3kc8tyy24nq" path="res://Sprites/Entities/Enemies/Cod swim.png" id="2_7hfgb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h7yoc"]
-atlas = ExtResource("1_iuvha")
+atlas = ExtResource("2_7hfgb")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fijs0"]
-atlas = ExtResource("1_iuvha")
+atlas = ExtResource("2_7hfgb")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0slc"]
-atlas = ExtResource("1_iuvha")
+atlas = ExtResource("2_7hfgb")
 region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d1om0"]
-atlas = ExtResource("1_iuvha")
+atlas = ExtResource("2_7hfgb")
 region = Rect2(24, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pimfg"]
@@ -47,10 +47,10 @@ height = 15.0
 radius = 3.0
 height = 15.0
 
-[node name="Cod" type="CharacterBody2D"]
+[node name="cod" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 3
-script = ExtResource("1_2dsa0")
+script = ExtResource("1_bt5gk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pimfg")

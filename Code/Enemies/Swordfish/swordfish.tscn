@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dcp15oo1olg6d"]
 
-[ext_resource type="Script" path="res://Code/Enemies/Swotdfish/swordfish.gd" id="1_2dsa0"]
+[ext_resource type="Script" path="res://Code/Enemies/Swordfish/swordfish.gd" id="1_2dsa0"]
 [ext_resource type="Texture2D" uid="uid://dvlm8oc54ejw6" path="res://Sprites/Entities/Enemies/Swordfish swim.png" id="2_fseek"]
 [ext_resource type="Texture2D" uid="uid://d3wbpk1xx467l" path="res://Sprites/Entities/Enemies/Swordfish attack.png" id="2_p7sca"]
 
