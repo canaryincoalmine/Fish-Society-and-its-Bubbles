@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://74lnysi4i3b7" path="res://Code/Enemies/Cod/Cod.tscn" id="2_1b68g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_3s3vn"]
-vertices = PackedVector2Array(816.82, -368.039, 883.07, 396.703, -781.023, 353.25, -782.969, -375.953)
+vertices = PackedVector2Array(1566.78, -745.281, 1531.22, 885.641, -1310.38, 784.328, -1375.57, -828.688)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-793, -386, 826, -378, 894, 407, -791, 363)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1386, -839, 1577, -755, 1541, 896, -1320, 794)])
 
 [node name="Main" type="Node2D"]
 
@@ -21,5 +21,4 @@ navigation_polygon = SubResource("NavigationPolygon_3s3vn")
 [node name="Cod" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("2_1b68g")]
 position = Vector2(334, 34)
 scale = Vector2(10, 10)
-motion_mode = 1
 target_to_chase = NodePath("../Player")
