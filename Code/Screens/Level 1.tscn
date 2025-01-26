@@ -107,7 +107,13 @@ scale = Vector2(10, 10)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Cod" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
-position = Vector2(973, 389)
+position = Vector2(-871, 906)
+scale = Vector2(10, 10)
+collision_layer = 1
+target_to_chase = NodePath("../Player")
+
+[node name="Cod2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
+position = Vector2(-295, -633)
 scale = Vector2(10, 10)
 collision_layer = 1
 target_to_chase = NodePath("../Player")

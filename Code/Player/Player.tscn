@@ -86,9 +86,6 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y14a"]
-size = Vector2(8, 4)
-
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jvf1e"]
 streams_count = 4
 stream_0/stream = ExtResource("3_vcukg")
@@ -112,18 +109,17 @@ stream_1/stream = ExtResource("14_l0gr4")
 stream_2/stream = ExtResource("15_4mxbi")
 stream_3/stream = ExtResource("16_gn0vp")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y14a"]
+size = Vector2(8, 4)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 9
+collision_mask = 13
 script = ExtResource("1_w8jt3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vhsq0")
 animation = &"idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_1y14a")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(6, 0)
@@ -141,13 +137,17 @@ stream = SubResource("AudioStreamRandomizer_ppohr")
 volume_db = -12.87
 
 [node name="ShootTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.1
 
 [node name="WalkSoundTimer" type="Timer" parent="."]
-wait_time = 0.305
+wait_time = 0.3
 autostart = true
 
 [node name="DashTimer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_1y14a")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_timer_timeout"]
