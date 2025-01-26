@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://clsqauqva11rd"]
+[gd_scene load_steps=14 format=3 uid="uid://clsqauqva11rd"]
 
 [ext_resource type="Script" path="res://Code/Projectiles/player_bullet.gd" id="1_jd8y5"]
 [ext_resource type="Texture2D" uid="uid://cpq6ewxdvilsm" path="res://Sprites/Entities/Bubble.png" id="1_mvgv1"]
 [ext_resource type="Texture2D" uid="uid://cxalp26sgwgai" path="res://Sprites/Entities/Bubble pop.png" id="3_8626u"]
+[ext_resource type="AudioStream" uid="uid://bv01s5jktop2u" path="res://Audio/on_hit_1.wav" id="4_6v4g7"]
+[ext_resource type="AudioStream" uid="uid://dofpdig4xd4n1" path="res://Audio/on_hit_2.wav" id="5_ky4vk"]
+[ext_resource type="AudioStream" uid="uid://dktjea2o1luw3" path="res://Audio/on_hit_3.wav" id="6_ccod0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jp6oe"]
 radius = 16.0312
@@ -51,6 +54,12 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yl6s7"]
+streams_count = 3
+stream_0/stream = ExtResource("4_6v4g7")
+stream_1/stream = ExtResource("5_ky4vk")
+stream_2/stream = ExtResource("6_ccod0")
+
 [node name="PlayerBullet" type="Area2D"]
 collision_mask = 5
 script = ExtResource("1_jd8y5")
@@ -69,6 +78,10 @@ sprite_frames = SubResource("SpriteFrames_ld8rp")
 animation = &"pop"
 frame = 3
 frame_progress = 1.0
+
+[node name="OnHitSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_yl6s7")
+volume_db = -15.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="ready" from="." to="." method="_on_ready"]

@@ -14,6 +14,7 @@ func _on_area_entered(area):
 
 
 func _on_body_entered(body):
+	$OnHitSound.play()
 	$AnimatedSprite2D.play("pop")
 	SPEED = 0
 

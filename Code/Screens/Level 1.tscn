@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bhyod40y51n4o"]
+[gd_scene load_steps=15 format=3 uid="uid://bhyod40y51n4o"]
 
 [ext_resource type="PackedScene" uid="uid://c1atry1s104y0" path="res://Code/Player/Player.tscn" id="1_jh7pn"]
 [ext_resource type="Script" path="res://Code/Screens/level_1.gd" id="1_p740o"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://hr4j7wc20j3s" path="res://Sprites/Maps/Level1/Background filler.png" id="2_tciqi"]
 [ext_resource type="Texture2D" uid="uid://cr0he6bcwdvbm" path="res://Sprites/Maps/Level1/Underwater deck room.png" id="3_bcxjj"]
 [ext_resource type="Texture2D" uid="uid://bri8exuq6oqrs" path="res://Sprites/Maps/Level1/Underwater stairs .png" id="4_e5a6p"]
+[ext_resource type="AudioStream" uid="uid://b2a5voaaaeocn" path="res://Audio/ocean_ambience_1.wav" id="4_icb3t"]
 [ext_resource type="Texture2D" uid="uid://cqhyboxt7ukbf" path="res://Sprites/Maps/Level1/Underwater stairs top layer.png" id="5_82kac"]
 [ext_resource type="Texture2D" uid="uid://cnl8aj5qh7qhp" path="res://Sprites/Maps/Level1/Ship top layer.png" id="6_tsaih"]
 [ext_resource type="PackedScene" uid="uid://74lnysi4i3b7" path="res://Code/Enemies/Cod/Cod.tscn" id="7_5okh8"]
@@ -27,6 +28,10 @@ texture = ExtResource("2_tciqi")
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8biuh")
 volume_db = -12.18
+
+[node name="AmbiencePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_icb3t")
+volume_db = -15.768
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_eeqhf")

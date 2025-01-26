@@ -137,7 +137,7 @@ volume_db = -11.95
 
 [node name="DashSound" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_ppohr")
-volume_db = -8.185
+volume_db = -12.87
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 0.2
