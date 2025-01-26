@@ -83,6 +83,7 @@ target_position = Vector2(200, 0)
 collision_mask = 2
 
 [node name="Shadow" type="Sprite2D" parent="."]
+z_index = -1
 texture = ExtResource("3_avmny")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
