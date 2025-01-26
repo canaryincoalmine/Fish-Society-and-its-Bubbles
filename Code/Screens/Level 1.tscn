@@ -60,7 +60,6 @@ scale = Vector2(10, 10)
 texture = ExtResource("3_bcxjj")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D/UnderwaterDeckRoom"]
-scale = Vector2(1, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/UnderwaterDeckRoom/StaticBody2D"]
 polygon = PackedVector2Array(-60.6, 38.5, -57.2, 38.5, 51.8, 38.8, 59.7, 38.6, 59.8, -32.8, -60.7, -34.2)
@@ -80,7 +79,6 @@ polygon = PackedVector2Array(-19.5, 15.9, 18.9, 16.2, 18.8, -13.2, -19.7, -13.3,
 top_level = true
 position = Vector2(973, 389)
 scale = Vector2(10, 10)
-collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
@@ -88,5 +86,4 @@ collision_layer = 2
 position = Vector2(973, 389)
 scale = Vector2(10, 10)
 collision_layer = 2
-SPEED = 30
 target_to_chase = NodePath("../Player")
