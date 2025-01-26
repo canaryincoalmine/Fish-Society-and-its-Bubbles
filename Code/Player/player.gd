@@ -112,4 +112,13 @@ func take_damage(damage):
 	health = max(new_health, 0)
 	Global.hud.update_simple(health)
 	if (health == 0):
-		queue_free()
+		die()
+		
+func die():
+	if $Camera2D:
+		var camera = $Camera2D
+		camera.get_parent().remove_child(camera)
+		get_tree().get_root().add_child(camera)  # Reparent the camera to the scene root
+		camera.position = position  # Keep the camera at the player's last position
+	
+	queue_free()  # Remove the player
