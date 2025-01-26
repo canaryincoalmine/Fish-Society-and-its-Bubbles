@@ -64,7 +64,6 @@ shape = SubResource("CapsuleShape2D_jykvr")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
-debug_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
