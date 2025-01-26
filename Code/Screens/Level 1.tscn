@@ -67,6 +67,7 @@ scale = Vector2(10, 10)
 texture = ExtResource("3_bcxjj")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D/UnderwaterDeckRoom"]
+scale = Vector2(1, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/UnderwaterDeckRoom/StaticBody2D"]
 polygon = PackedVector2Array(-60.6, 38.5, -57.2, 38.5, 51.8, 38.8, 59.7, 38.6, 59.8, -32.8, -60.7, -34.2)
