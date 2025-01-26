@@ -8,6 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://cqhyboxt7ukbf" path="res://Sprites/Maps/Level1/Underwater stairs top layer.png" id="5_82kac"]
 [ext_resource type="Texture2D" uid="uid://cnl8aj5qh7qhp" path="res://Sprites/Maps/Level1/Ship top layer.png" id="6_tsaih"]
 [ext_resource type="AudioStream" uid="uid://bi3m32ns5vnuq" path="res://Audio/main_soundtrack.wav" id="8_8biuh"]
+[ext_resource type="Texture2D" uid="uid://dhhp18k04y1hh" path="res://Sprites/Maps/Level1/Deck room top layer.png" id="7_unpje"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_eeqhf"]
+vertices = PackedVector2Array(1975.02, -1131.01, 1982.96, 1504.91, -1924.98, 1473.08, -1921.01, -1134.98)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1931, -1145, 1985, -1141, 1993, 1515, -1935, 1483)])
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_p740o")
@@ -26,11 +32,12 @@ texture = ExtResource("2_8mxin")
 [node name="StaticBody2D" type="StaticBody2D" parent="MainBackground"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MainBackground/StaticBody2D"]
-position = Vector2(0, 28.7)
+position = Vector2(0, 26.4)
 build_mode = 1
-polygon = PackedVector2Array(-183.4, -94.8, -170.7, -107.1, 80.7, -107.3, 158.3, -73, 191.7, -39.6, 192, 50.4, 156.3, 86.2, 80.1, 117.2, -170.6, 117.6, -183.1, 105)
+polygon = PackedVector2Array(-183.4, -94.8, -170.7, -107.1, -117.262, -107.142, 80.7, -107.3, 158.3, -73, 191.7, -39.6, 192, 50.4, 156.3, 86.2, 80.1, 117.2, -170.6, 117.6, -183.1, 105)
 
 [node name="UnderwaterDeckRoom" type="Sprite2D" parent="."]
+show_behind_parent = true
 position = Vector2(191, 65)
 scale = Vector2(10, 10)
 texture = ExtResource("3_bcxjj")
@@ -38,7 +45,7 @@ texture = ExtResource("3_bcxjj")
 [node name="StaticBody2D" type="StaticBody2D" parent="UnderwaterDeckRoom"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UnderwaterDeckRoom/StaticBody2D"]
-polygon = PackedVector2Array(-60.5, 50.1, -56.7, 53.6, 55.2, 54.2, 60.1, 49.1, 60.1, -18.3, -60.8, -18.3)
+polygon = PackedVector2Array(-60.6, 38.5, -57.2, 38.5, 51.8, 38.8, 59.7, 38.6, 59.8, -32.8, -60.7, -34.2)
 
 [node name="UnderwaterStairs" type="Sprite2D" parent="."]
 show_behind_parent = true
@@ -64,3 +71,10 @@ texture = ExtResource("6_tsaih")
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8biuh")
 volume_db = -12.18
+[node name="DeckRoomTopLayer" type="Sprite2D" parent="."]
+position = Vector2(191, 65)
+scale = Vector2(10, 10)
+texture = ExtResource("7_unpje")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_eeqhf")
