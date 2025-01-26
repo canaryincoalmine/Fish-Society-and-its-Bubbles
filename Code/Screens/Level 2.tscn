@@ -89,7 +89,7 @@ polygon = PackedVector2Array(932, 301, 1016, 301, 1012, -67, 926, -73)
 polygon = PackedVector2Array(1199, -20, 1554, -29, 1545, -240, 1217, -235, 1211, -292, 1579, -289, 1585, -241, 1585, 2, 1202, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_jh7pn")]
-position = Vector2(973, 389)
+position = Vector2(1217, -135)
 scale = Vector2(10, 10)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

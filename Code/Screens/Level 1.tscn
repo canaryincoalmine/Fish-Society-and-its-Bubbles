@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhyod40y51n4o"]
+[gd_scene load_steps=17 format=3 uid="uid://bhyod40y51n4o"]
 
 [ext_resource type="PackedScene" uid="uid://c1atry1s104y0" path="res://Code/Player/Player.tscn" id="1_jh7pn"]
 [ext_resource type="Script" path="res://Code/Screens/level_1.gd" id="1_p740o"]
@@ -21,7 +21,14 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedIn
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1698, -777, 803, -775, 1577, -441, 1916, -126, 1908, 507, 1564, 854, 798, 1177, -1698, 1177, -1824, 1049, -1827, -652)])
 parsed_collision_mask = 4294967289
 
+<<<<<<< HEAD
 [node name="Main3" type="Node2D"]
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pu84w"]
+size = Vector2(20, 83)
+
+[node name="Main2" type="Node2D"]
+>>>>>>> 706d3f8f70c434b40cd333baf032147a73dfd782
 script = ExtResource("1_p740o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -52,6 +59,7 @@ navigation_polygon = SubResource("NavigationPolygon_yqgwh")
 
 [node name="MainBackground" type="Sprite2D" parent="NavigationRegion2D2"]
 show_behind_parent = true
+z_index = -1
 scale = Vector2(10, 10)
 texture = ExtResource("2_8mxin")
 
@@ -139,3 +147,13 @@ position = Vector2(-1602, -588)
 
 [node name="Heart2" parent="." instance=ExtResource("14_frw6p")]
 position = Vector2(114, 848)
+
+[node name="GoToLevel2" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoToLevel2"]
+position = Vector2(1588, 268.5)
+shape = SubResource("RectangleShape2D_pu84w")
+
+[connection signal="body_entered" from="GoToLevel2" to="." method="_on_go_to_level_2_body_entered"]
