@@ -70,7 +70,8 @@ func handle_enemy_collision(enemy):
 	queue_free()
 	
 func _process(delta: float) -> void:
-	pass
+	$Shadow.global_position = global_position + Vector2(0, 10)  # Offset shadow below player
+	
 
 
 func _on_timer_timeout() -> void:

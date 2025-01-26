@@ -1,0 +1,112 @@
+[gd_scene load_steps=15 format=3 uid="uid://dcp15oo1olg6d"]
+
+[ext_resource type="Script" path="res://Code/Enemies/Swotdfish/swordfish.gd" id="1_2dsa0"]
+[ext_resource type="Texture2D" uid="uid://dvlm8oc54ejw6" path="res://Sprites/Entities/Enemies/Swordfish swim.png" id="2_fseek"]
+[ext_resource type="Texture2D" uid="uid://d3wbpk1xx467l" path="res://Sprites/Entities/Enemies/Swordfish attack.png" id="2_p7sca"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm537"]
+atlas = ExtResource("2_p7sca")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vghy4"]
+atlas = ExtResource("2_p7sca")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h348s"]
+atlas = ExtResource("2_p7sca")
+region = Rect2(0, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6daj4"]
+atlas = ExtResource("2_p7sca")
+region = Rect2(40, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d5ei"]
+atlas = ExtResource("2_p7sca")
+region = Rect2(0, 80, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6uys"]
+atlas = ExtResource("2_fseek")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7b2d"]
+atlas = ExtResource("2_fseek")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myv8u"]
+atlas = ExtResource("2_fseek")
+region = Rect2(0, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3okp"]
+atlas = ExtResource("2_fseek")
+region = Rect2(40, 40, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vg3r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm537")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vghy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h348s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6daj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d5ei")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6uys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7b2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myv8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3okp")
+}],
+"loop": true,
+"name": &"move",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dihcl"]
+size = Vector2(13, 6)
+
+[node name="Swordfish" type="CharacterBody2D"]
+scale = Vector2(8, 8)
+script = ExtResource("1_2dsa0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1vg3r")
+animation = &"attack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_dihcl")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_dihcl")
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
