@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://bafs4hi3u7lla"
-=======
-uid="uid://3bpujp3nft7o"
->>>>>>> 24c4d8f6cc77280bac37dba31f96efa6a96af5a1
-path="res://.godot/imported/Level 2 top layer.png-7c50f80736aa1f3d9dcc75d08e22af92.ctex"
+uid="uid://bcxn02p78uyps"
+path="res://.godot/imported/Fin.png-956d86a9ddbd70d39336cb0d7c36ffb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Maps/Level2/Level 2 top layer.png"
-dest_files=["res://.godot/imported/Level 2 top layer.png-7c50f80736aa1f3d9dcc75d08e22af92.ctex"]
+source_file="res://Sprites/Icons/Menus/Fin.png"
+dest_files=["res://.godot/imported/Fin.png-956d86a9ddbd70d39336cb0d7c36ffb3.ctex"]
 
 [params]
 

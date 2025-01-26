@@ -1,0 +1,79 @@
+[gd_scene load_steps=14 format=3 uid="uid://bkrb74kxek3wn"]
+
+[ext_resource type="Texture2D" uid="uid://ctsfdoipwyhx8" path="res://Sprites/Maps/End Screen.png" id="1_6kpjk"]
+[ext_resource type="Texture2D" uid="uid://bcxn02p78uyps" path="res://Sprites/Icons/Menus/Fin.png" id="2_kmd5x"]
+[ext_resource type="Texture2D" uid="uid://bkbifnbcma3xc" path="res://Sprites/Icons/Menus/Selected Replay Button.png" id="3_14nta"]
+[ext_resource type="Texture2D" uid="uid://cbup8oks6gq1p" path="res://Sprites/Icons/Menus/Replay Button.png" id="4_62ci4"]
+[ext_resource type="Script" path="res://Code/Screens/button.gd" id="5_5vqqd"]
+[ext_resource type="Texture2D" uid="uid://dnksm1qfrqhtx" path="res://Sprites/Icons/Menus/Selected Exit Button.png" id="6_8rfuo"]
+[ext_resource type="Texture2D" uid="uid://cehg1n1yiar8k" path="res://Sprites/Icons/Menus/Exit Button.png" id="7_jce5a"]
+
+[sub_resource type="Theme" id="Theme_y6fvi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lfs2t"]
+texture = ExtResource("3_14nta")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aha2y"]
+texture = ExtResource("4_62ci4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nvgnc"]
+texture = ExtResource("6_8rfuo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qpmq3"]
+texture = ExtResource("7_jce5a")
+
+[sub_resource type="GDScript" id="GDScript_hkrvt"]
+script/source = "extends Button
+"
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -32.0
+offset_right = 3.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(955, 484)
+scale = Vector2(2.9, 2.9)
+texture = ExtResource("1_6kpjk")
+
+[node name="End Title" type="Sprite2D" parent="."]
+position = Vector2(944, 355)
+scale = Vector2(40, 40)
+texture = ExtResource("2_kmd5x")
+
+[node name="Replay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 600.0
+offset_right = 940.0
+offset_bottom = 668.0
+scale = Vector2(2, 2)
+theme = SubResource("Theme_y6fvi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lfs2t")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aha2y")
+action_mode = 0
+icon_alignment = 1
+script = ExtResource("5_5vqqd")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 800.0
+offset_right = 940.0
+offset_bottom = 868.0
+scale = Vector2(2, 2)
+theme_override_styles/hover = SubResource("StyleBoxTexture_nvgnc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qpmq3")
+script = SubResource("GDScript_hkrvt")
+
+[connection signal="pressed" from="Replay" to="Replay" method="_on_pressed"]
+[connection signal="pressed" from="Replay" to="Replay" method="_on_play_pressed"]
+[connection signal="pressed" from="Exit" to="Replay" method="_on_exit_pressed"]
