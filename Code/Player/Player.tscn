@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c1atry1s104y0"]
+[gd_scene load_steps=25 format=3 uid="uid://c1atry1s104y0"]
 
 [ext_resource type="Script" path="res://Code/Player/player.gd" id="1_w8jt3"]
 [ext_resource type="Texture2D" uid="uid://l7vottbmlc1b" path="res://Sprites/Entities/Player.png" id="2_vbgjd"]
@@ -6,6 +6,12 @@
 [ext_resource type="AudioStream" uid="uid://t5xwsllhj8ni" path="res://Audio/shoot_2.wav" id="4_uet32"]
 [ext_resource type="AudioStream" uid="uid://1gevgr2kbhcw" path="res://Audio/shoot_3.wav" id="5_c0gph"]
 [ext_resource type="AudioStream" uid="uid://c36bw4g6n71k4" path="res://Audio/shoot_4.wav" id="6_hcura"]
+[ext_resource type="AudioStream" uid="uid://bcv4fdi468vba" path="res://Audio/swim_1.wav" id="7_1co5v"]
+[ext_resource type="AudioStream" uid="uid://cbcpcc6fbsmc7" path="res://Audio/swim_2.wav" id="8_3f74x"]
+[ext_resource type="AudioStream" uid="uid://bi5a0nsh7vlsp" path="res://Audio/swim_3.wav" id="9_sq3dy"]
+[ext_resource type="AudioStream" uid="uid://dexi3qrid5o6q" path="res://Audio/swim_4.wav" id="10_5gpcv"]
+[ext_resource type="AudioStream" uid="uid://ip01hst836qn" path="res://Audio/swim_5.wav" id="11_5lagy"]
+[ext_resource type="AudioStream" uid="uid://bn52xuk5fdtij" path="res://Audio/swim_6.wav" id="12_c0yjj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpi1o"]
 atlas = ExtResource("2_vbgjd")
@@ -86,6 +92,15 @@ stream_1/stream = ExtResource("4_uet32")
 stream_2/stream = ExtResource("5_c0gph")
 stream_3/stream = ExtResource("6_hcura")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_82x8i"]
+streams_count = 6
+stream_0/stream = ExtResource("7_1co5v")
+stream_1/stream = ExtResource("8_3f74x")
+stream_2/stream = ExtResource("9_sq3dy")
+stream_3/stream = ExtResource("10_5gpcv")
+stream_4/stream = ExtResource("11_5lagy")
+stream_5/stream = ExtResource("12_c0yjj")
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_w8jt3")
 
@@ -100,11 +115,20 @@ shape = SubResource("RectangleShape2D_1y14a")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(6, 0)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
-
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_jvf1e")
 volume_db = -10.306
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="WalkSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_82x8i")
+volume_db = -11.95
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="WalkSoundTimer" type="Timer" parent="."]
+wait_time = 0.305
+autostart = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="WalkSoundTimer" to="." method="_on_walk_sound_timer_timeout"]
