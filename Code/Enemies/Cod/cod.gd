@@ -8,6 +8,8 @@ var health = 3
 
 var dash_ready = true
 var dashing = false
+var dash_cooldown = 3
+var dash_variance = 0.5
 
 const SPEED = 100.0
 
@@ -44,4 +46,6 @@ func take_damage(damage):
 
 
 func _on_dash_timer_timeout():
+	$DashTimer.wait_time = dash_cooldown + randf_range(-dash_variance, dash_variance)
 	dash_ready = true
+	

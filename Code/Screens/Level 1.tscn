@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhyod40y51n4o"]
+[gd_scene load_steps=16 format=3 uid="uid://bhyod40y51n4o"]
 
 [ext_resource type="PackedScene" uid="uid://c1atry1s104y0" path="res://Code/Player/Player.tscn" id="1_jh7pn"]
 [ext_resource type="Script" path="res://Code/Screens/level_1.gd" id="1_p740o"]
@@ -14,7 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://bi3m32ns5vnuq" path="res://Audio/main_soundtrack.wav" id="8_8biuh"]
 [ext_resource type="PackedScene" uid="uid://dqhkrfhkhdwoh" path="res://Code/Screens/hud.tscn" id="12_8fd6g"]
 [ext_resource type="PackedScene" uid="uid://cva2gw57wx4ko" path="res://Code/Pickups/heart.tscn" id="14_frw6p"]
-[ext_resource type="PackedScene" uid="uid://dcp15oo1olg6d" path="res://Code/Enemies/Swotdfish/swordfish.tscn" id="15_1cteo"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yqgwh"]
 vertices = PackedVector2Array(800, 563.922, 1262, 345.922, 1666.03, 349.078, 1898.05, 502.828, 1558.29, 845.547, 795.977, 1167, 1905.94, -121.68, 1664.97, 35.0313, 800, -428.141, 1262, 284, 1581.79, 238.023, 1597.12, 284, 1262.52, 73.3594, 1259.09, 33.9688, 1571.43, -432.508, 800.93, -765, 744.141, -484, -1693.95, -766.992, -372.031, -484, -429, -429.258, -429, 574.078, -1693.8, 1167, -1814, 1044.88, -1816.99, -647.773)
@@ -102,19 +101,31 @@ scale = Vector2(10, 10)
 texture = ExtResource("7_unpje")
 
 [node name="Player" parent="." instance=ExtResource("1_jh7pn")]
-position = Vector2(973, 389)
+position = Vector2(-1146, 13)
 scale = Vector2(10, 10)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Cod" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
-position = Vector2(-871, 906)
+position = Vector2(1641, 487)
 scale = Vector2(10, 10)
 collision_layer = 1
 target_to_chase = NodePath("../Player")
 
 [node name="Cod2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
-position = Vector2(-295, -633)
+position = Vector2(1065, -167)
+scale = Vector2(10, 10)
+collision_layer = 1
+target_to_chase = NodePath("../Player")
+
+[node name="Cod3" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
+position = Vector2(-321, 852)
+scale = Vector2(10, 10)
+collision_layer = 1
+target_to_chase = NodePath("../Player")
+
+[node name="Cod4" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
+position = Vector2(47.0002, -595)
 scale = Vector2(10, 10)
 collision_layer = 1
 target_to_chase = NodePath("../Player")
@@ -122,11 +133,7 @@ target_to_chase = NodePath("../Player")
 [node name="HUD" parent="." instance=ExtResource("12_8fd6g")]
 
 [node name="Heart" parent="." instance=ExtResource("14_frw6p")]
-position = Vector2(234, 812)
+position = Vector2(-1602, -588)
 
 [node name="Heart2" parent="." instance=ExtResource("14_frw6p")]
-position = Vector2(-542, 772)
-
-[node name="Swordfish" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("15_1cteo")]
-position = Vector2(-1271, 132)
-target_to_chase = NodePath("../Player")
+position = Vector2(114, 848)
