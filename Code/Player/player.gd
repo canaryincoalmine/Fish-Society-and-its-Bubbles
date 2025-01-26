@@ -56,7 +56,7 @@ func spawn_bullet(direction):
 	bullet.rotation = rotation
 	
 func process_recoil():
-	velocity = velocity - Vector2(200,0).rotated(rotation)
+	velocity = velocity - Vector2(300,0).rotated(rotation)
 
 
 func _physics_process(delta: float) -> void:
