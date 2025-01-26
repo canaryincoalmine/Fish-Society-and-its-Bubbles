@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://74lnysi4i3b7"]
+[gd_scene load_steps=11 format=3 uid="uid://74lnysi4i3b7"]
 
 [ext_resource type="Script" path="res://Code/Enemies/Cod/cod.gd" id="1_bt5gk"]
 [ext_resource type="Texture2D" uid="uid://cm3kc8tyy24nq" path="res://Sprites/Entities/Enemies/Cod swim.png" id="2_7hfgb"]
+[ext_resource type="Texture2D" uid="uid://bmjq3uuia4gfg" path="res://Sprites/Entities/Enemies/Cod shadow.png" id="3_avmny"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h7yoc"]
 atlas = ExtResource("2_7hfgb")
@@ -80,6 +81,9 @@ wait_time = 3.0
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(200, 0)
 collision_mask = 2
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture = ExtResource("3_avmny")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="child_entered_tree" from="RayCast2D" to="." method="_on_ray_cast_2d_child_entered_tree"]

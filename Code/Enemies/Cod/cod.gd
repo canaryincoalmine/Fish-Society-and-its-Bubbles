@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 			$DashTimer.start()
 			await get_tree().create_timer(0.7).timeout
 			dashing = false
+		$Shadow.global_position = global_position + Vector2(0, 10)
 		move_and_slide()
 	
 func take_damage(damage):
