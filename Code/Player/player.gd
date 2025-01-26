@@ -56,7 +56,7 @@ func spawn_bullet(direction):
 	bullet.rotation = rotation
 	
 func process_recoil():
-	velocity = velocity - Vector2(300,0).rotated(rotation)
+	velocity = velocity - Vector2(3-00,0).rotated(rotation)
 
 
 func _physics_process(delta: float) -> void:
@@ -107,4 +107,6 @@ func take_damage(damage):
 		die()
 		
 func die():
+	#$DeathSound.play()
+	#await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://Code/Screens/DeathScreen.tscn")

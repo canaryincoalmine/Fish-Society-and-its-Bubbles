@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvyuqfe5r7ukf"]
+[gd_scene load_steps=14 format=3 uid="uid://cvyuqfe5r7ukf"]
 
+[ext_resource type="Script" path="res://Code/Screens/death_screen.gd" id="1_fj2sn"]
 [ext_resource type="Texture2D" uid="uid://t4j76h8b7ve0" path="res://Sprites/Maps/Level1/Main background.png" id="1_wkpau"]
 [ext_resource type="Texture2D" uid="uid://dual5pdea00l6" path="res://Sprites/Icons/Menus/Game Over.png" id="2_lpry5"]
 [ext_resource type="Texture2D" uid="uid://bkbifnbcma3xc" path="res://Sprites/Icons/Menus/Selected Replay Button.png" id="3_1ylwh"]
@@ -7,6 +8,7 @@
 [ext_resource type="Script" path="res://Code/Screens/button.gd" id="5_rkbcy"]
 [ext_resource type="Texture2D" uid="uid://dnksm1qfrqhtx" path="res://Sprites/Icons/Menus/Selected Exit Button.png" id="6_8ejew"]
 [ext_resource type="Texture2D" uid="uid://cehg1n1yiar8k" path="res://Sprites/Icons/Menus/Exit Button.png" id="7_awy28"]
+[ext_resource type="AudioStream" uid="uid://dwj1lhiw4rrot" path="res://Audio/pufferfish carrot processed.wav" id="9_8rkof"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtb6u"]
 texture = ExtResource("3_1ylwh")
@@ -27,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fj2sn")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(955, 484)
@@ -59,6 +62,10 @@ offset_bottom = 868.0
 scale = Vector2(2, 2)
 theme_override_styles/hover = SubResource("StyleBoxTexture_fqguh")
 theme_override_styles/normal = SubResource("StyleBoxTexture_pk65i")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_8rkof")
+volume_db = -10.554
 
 [connection signal="pressed" from="Replay" to="Replay" method="_on_replay_pressed"]
 [connection signal="pressed" from="Exit" to="Replay" method="_on_exit_pressed"]

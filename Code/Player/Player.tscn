@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c1atry1s104y0"]
+[gd_scene load_steps=33 format=3 uid="uid://c1atry1s104y0"]
 
 [ext_resource type="Script" path="res://Code/Player/player.gd" id="1_w8jt3"]
 [ext_resource type="Texture2D" uid="uid://l7vottbmlc1b" path="res://Sprites/Entities/Player.png" id="2_vbgjd"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://btdhx6cqel4p1" path="res://Audio/dash_3.wav" id="15_4mxbi"]
 [ext_resource type="AudioStream" uid="uid://deih7uqo4yj4i" path="res://Audio/dash_4.wav" id="16_gn0vp"]
 [ext_resource type="Texture2D" uid="uid://b6ulk4wgnk2np" path="res://Sprites/Entities/Player shadow.png" id="17_u8vnq"]
+[ext_resource type="AudioStream" uid="uid://dwj1lhiw4rrot" path="res://Audio/pufferfish carrot processed.wav" id="18_ctn0h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpi1o"]
 atlas = ExtResource("2_vbgjd")
@@ -169,6 +170,10 @@ shape = SubResource("CapsuleShape2D_mkcf4")
 z_index = -1
 position = Vector2(0, 5)
 texture = ExtResource("17_u8vnq")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_ctn0h")
+volume_db = -10.0
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_timer_timeout"]
