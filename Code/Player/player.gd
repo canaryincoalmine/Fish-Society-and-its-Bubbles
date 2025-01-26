@@ -32,13 +32,22 @@ func get_input():
 		bullet.rotation = rotation
 		reloaded = false
 		$ShootSound.play()
-		$Timer.start()
+		$ShootTimer.start()
 
 func _physics_process(delta: float) -> void:
 	get_input()
-	
 	move_and_slide()
+	
+func _process(delta: float) -> void:
+	pass
 
 
 func _on_timer_timeout() -> void:
 	reloaded = true
+
+
+func _on_walk_sound_timer_timeout():
+	# activates walk sound - timer is set to autostart
+	$WalkSound.play()
+	$WalkSoundTimer.start()
+	
