@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhyod40y51n4o"]
+[gd_scene load_steps=11 format=3 uid="uid://bhyod40y51n4o"]
 
 [ext_resource type="PackedScene" uid="uid://c1atry1s104y0" path="res://Code/Player/Player.tscn" id="1_jh7pn"]
 [ext_resource type="Script" path="res://Code/Screens/level_1.gd" id="1_p740o"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bri8exuq6oqrs" path="res://Sprites/Maps/Level1/Underwater stairs .png" id="4_e5a6p"]
 [ext_resource type="Texture2D" uid="uid://cqhyboxt7ukbf" path="res://Sprites/Maps/Level1/Underwater stairs top layer.png" id="5_82kac"]
 [ext_resource type="Texture2D" uid="uid://cnl8aj5qh7qhp" path="res://Sprites/Maps/Level1/Ship top layer.png" id="6_tsaih"]
-[ext_resource type="AudioStream" uid="uid://bi3m32ns5vnuq" path="res://Audio/main_soundtrack.wav" id="8_8biuh"]
 [ext_resource type="Texture2D" uid="uid://dhhp18k04y1hh" path="res://Sprites/Maps/Level1/Deck room top layer.png" id="7_unpje"]
+[ext_resource type="AudioStream" uid="uid://bi3m32ns5vnuq" path="res://Audio/main_soundtrack.wav" id="8_8biuh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_eeqhf"]
 vertices = PackedVector2Array(1975.02, -1131.01, 1982.96, 1504.91, -1924.98, 1473.08, -1921.01, -1134.98)
@@ -71,6 +71,7 @@ texture = ExtResource("6_tsaih")
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8biuh")
 volume_db = -12.18
+
 [node name="DeckRoomTopLayer" type="Sprite2D" parent="."]
 position = Vector2(191, 65)
 scale = Vector2(10, 10)
