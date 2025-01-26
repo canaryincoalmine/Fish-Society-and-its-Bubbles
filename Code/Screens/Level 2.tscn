@@ -1,15 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckjjndrhum6kp"]
+[gd_scene load_steps=12 format=3 uid="uid://clwgoax00tosg"]
 
 [ext_resource type="PackedScene" uid="uid://c1atry1s104y0" path="res://Code/Player/Player.tscn" id="1_jh7pn"]
 [ext_resource type="Script" path="res://Code/Screens/level_1.gd" id="1_p740o"]
 [ext_resource type="Texture2D" uid="uid://hr4j7wc20j3s" path="res://Sprites/Maps/Level1/Background filler.png" id="2_tciqi"]
 [ext_resource type="AudioStream" uid="uid://b2a5voaaaeocn" path="res://Audio/ocean_ambience_1.wav" id="4_icb3t"]
-[ext_resource type="Texture2D" uid="uid://bweuvyhl7vfpx" path="res://Sprites/Maps/Level2/Level 2.png" id="5_3fhie"]
+[ext_resource type="Texture2D" uid="uid://do6o17eyfch8n" path="res://Sprites/Maps/Level2/Level 2.png" id="5_3fhie"]
 [ext_resource type="Texture2D" uid="uid://cnl8aj5qh7qhp" path="res://Sprites/Maps/Level1/Ship top layer.png" id="6_tsaih"]
 [ext_resource type="PackedScene" uid="uid://74lnysi4i3b7" path="res://Code/Enemies/Cod/Cod.tscn" id="7_5okh8"]
 [ext_resource type="AudioStream" uid="uid://bi3m32ns5vnuq" path="res://Audio/main_soundtrack.wav" id="8_8biuh"]
-[ext_resource type="Texture2D" uid="uid://cldvm1hl74iho" path="res://Sprites/Maps/Level2/Level 2 top layer.png" id="10_ttq0s"]
-[ext_resource type="PackedScene" path="res://Code/Screens/hud.tscn" id="12_8fd6g"]
+[ext_resource type="Texture2D" uid="uid://c41rcf2jw8kwi" path="res://Sprites/Maps/Level2/Level 2 top layer.png" id="10_ttq0s"]
+[ext_resource type="PackedScene" uid="uid://dqhkrfhkhdwoh" path="res://Code/Screens/hud.tscn" id="12_8fd6g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yqgwh"]
 vertices = PackedVector2Array(1761.06, 512.109, 1898.05, 504.656, 1657.54, 1024.28, 1415.69, 854.438, 823.07, 1373.97, 943.063, 1058, 941.977, 591.039, 943.969, -666.109, 1344.38, -502.477, 1684.03, -166.781, 1689.96, 476.75, 1367.43, 784.477, 939.813, 963.063, 937.883, 805.008, 862, 1058, 37.4297, 803.992, 47.4297, 984.883, -486.891, 979.102, -480.102, 304.148, 33.1094, 311.852, 36.1172, 563.156, -33.5469, -655.367, -37.5313, -743, 540.219, -743, 555.758, -43.2031, 452.156, -45.1875, 294.906, -87.9063, 1750.94, -193.32, 1917.88, -238.008, 1592.27, -568.563, 1382.61, -546.477, 793.977, -905.992, 871.008, -765.141, -142.828, -179, -112.391, -179, -119.391, 4.9375, -139.828, 1.99219, -212.203, -81.9609, -815.727, -80.0313, -809.727, -310.328, -217.188, -328.492, -915.82, -95.4063, -887.789, -96.5781, -885.797, 3.00781, -913.813, 14.0781, 225.133, 6.9375, 231.852, 489.93, 106.078, 489.063, 108.078, 254.109, -552.898, 246.891, -744.102, 235.094, -1570, -74.8828, -1570, -750.789, -988.227, -739.203, -990.242, -655.25, -1401.19, -72.8672, -107, -814.969, -107, -733.18, -140.867, -733.813, -139.883, -815.031, -806, -742.961, -220.219, -741.031, -222.227, -648.633, -806, -650.75, 441.844, 588.961, 301.094, 558.844, -43.8672, -90.9063, -40.8672, -337.531, 521.961, 514, 520.039, 39.0938, 623.023, 40.1016, 870.008, 514, 620.977, -817.031, -1698.11, -901, -876.109, -812.969, -875.109, -722, -915.109, -722, -916.109, -811.031, -1642.96, -808.969, -1821, 1203.85, -1824.99, -785.578, -1646.04, 12.0938, -1647.98, 222.922, -1216, 300.953, -813.969, 302.953, -812.023, 992.938, -1572.02, 989.047, -1372.34, 302.898, -561.102, 1058.06, -735.898, 1055, -1216, 230.906, -1199.25, 11.9297, -1369.65, 225.078, 109.063, 1053.94, 108.063, 878, 862, 878, -1686.8, 1338.05, -1650.02, 1055, -988.211, -304.68, -983.211, -75.8125, -1205.8, -71.8125, -1573.97, 304.898, -1407.76, 9.92188)
