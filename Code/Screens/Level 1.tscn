@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://74lnysi4i3b7" path="res://Code/Enemies/Cod/Cod.tscn" id="7_5okh8"]
 [ext_resource type="Texture2D" uid="uid://dhhp18k04y1hh" path="res://Sprites/Maps/Level1/Deck room top layer.png" id="7_unpje"]
 [ext_resource type="AudioStream" uid="uid://bi3m32ns5vnuq" path="res://Audio/main_soundtrack.wav" id="8_8biuh"]
-[ext_resource type="PackedScene" path="res://Code/Screens/hud.tscn" id="12_8fd6g"]
+[ext_resource type="PackedScene" uid="uid://dqhkrfhkhdwoh" path="res://Code/Screens/hud.tscn" id="12_8fd6g"]
 [ext_resource type="PackedScene" uid="uid://cva2gw57wx4ko" path="res://Code/Pickups/heart.tscn" id="14_frw6p"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yqgwh"]
@@ -108,14 +108,14 @@ scale = Vector2(10, 10)
 texture = ExtResource("7_unpje")
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_jh7pn")]
-position = Vector2(973, 389)
+position = Vector2(-1391, 2)
 scale = Vector2(10, 10)
 collision_mask = 29
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Cod" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
-position = Vector2(-871, 906)
+position = Vector2(-809, 887)
 scale = Vector2(10, 10)
 collision_layer = 1
 target_to_chase = NodePath("../Player")
@@ -126,13 +126,25 @@ scale = Vector2(10, 10)
 collision_layer = 1
 target_to_chase = NodePath("../Player")
 
+[node name="Cod3" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
+position = Vector2(666, 927)
+scale = Vector2(10, 10)
+collision_layer = 1
+target_to_chase = NodePath("../Player")
+
+[node name="Cod4" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
+position = Vector2(1275, -177)
+scale = Vector2(10, 10)
+collision_layer = 1
+target_to_chase = NodePath("../Player")
+
 [node name="HUD" parent="." instance=ExtResource("12_8fd6g")]
 
 [node name="Heart" parent="." instance=ExtResource("14_frw6p")]
 position = Vector2(234, 812)
 
 [node name="Heart2" parent="." instance=ExtResource("14_frw6p")]
-position = Vector2(-542, 772)
+position = Vector2(310, -621)
 
 [node name="GoToNextLevel" type="Area2D" parent="." groups=["Player"]]
 collision_layer = 16
