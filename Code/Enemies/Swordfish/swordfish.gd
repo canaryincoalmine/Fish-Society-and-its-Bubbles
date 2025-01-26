@@ -34,7 +34,6 @@ func _physics_process(delta: float) -> void:
 		if dash_ready:
 			dash_ready = false
 			dashing = true
-			print("dashing")
 			velocity = velocity*15
 			$DashTimer.start()
 			$AnimatedSprite2D.animation = "attack"
