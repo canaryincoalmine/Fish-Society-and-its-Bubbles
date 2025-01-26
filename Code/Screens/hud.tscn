@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqhkrfhkhdwoh"]
+
+[ext_resource type="Script" path="res://Code/Screens/heart_container.gd" id="1_2uugi"]
+[ext_resource type="Texture2D" uid="uid://dr1jcvakdh8n2" path="res://Sprites/Icons/Heart_static.png" id="1_enqvv"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="HeartContainer" type="HBoxContainer" parent="."]
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 94.0
+offset_bottom = 30.0
+scale = Vector2(6, 6)
+script = ExtResource("1_2uugi")
+
+[node name="1" type="TextureRect" parent="HeartContainer"]
+layout_mode = 2
+texture = ExtResource("1_enqvv")
+
+[node name="2" type="TextureRect" parent="HeartContainer"]
+layout_mode = 2
+texture = ExtResource("1_enqvv")
+
+[node name="3" type="TextureRect" parent="HeartContainer"]
+layout_mode = 2
+texture = ExtResource("1_enqvv")
+
+[node name="4" type="TextureRect" parent="HeartContainer"]
+layout_mode = 2
+texture = ExtResource("1_enqvv")
+
+[node name="5" type="TextureRect" parent="HeartContainer"]
+layout_mode = 2
+texture = ExtResource("1_enqvv")
