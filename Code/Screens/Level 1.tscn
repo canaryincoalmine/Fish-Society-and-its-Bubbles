@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b2a5voaaaeocn" path="res://Audio/ocean_ambience_1.wav" id="4_icb3t"]
 [ext_resource type="Texture2D" uid="uid://cqhyboxt7ukbf" path="res://Sprites/Maps/Level1/Underwater stairs top layer.png" id="5_82kac"]
 [ext_resource type="Texture2D" uid="uid://cnl8aj5qh7qhp" path="res://Sprites/Maps/Level1/Ship top layer.png" id="6_tsaih"]
-[ext_resource type="PackedScene" uid="uid://74lnysi4i3b7" path="res://Code/Enemies/Cod/Cod.tscn" id="7_5okh8"]
+[ext_resource type="PackedScene" uid="uid://74lnysi4i3b7" path="res://Code/Enemies/Cod/cod.tscn" id="7_5okh8"]
 [ext_resource type="Texture2D" uid="uid://dhhp18k04y1hh" path="res://Sprites/Maps/Level1/Deck room top layer.png" id="7_unpje"]
 [ext_resource type="AudioStream" uid="uid://bi3m32ns5vnuq" path="res://Audio/main_soundtrack.wav" id="8_8biuh"]
 [ext_resource type="PackedScene" uid="uid://dqhkrfhkhdwoh" path="res://Code/Screens/hud.tscn" id="12_8fd6g"]
@@ -21,11 +21,12 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedIn
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1698, -777, 803, -775, 1577, -441, 1916, -126, 1908, 507, 1564, 854, 798, 1177, -1698, 1177, -1824, 1049, -1827, -652)])
 parsed_collision_mask = 4294967289
 
-[node name="Main2" type="Node2D"]
+[node name="Main3" type="Node2D"]
 script = ExtResource("1_p740o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
+z_index = -1
 scale = Vector2(10, 10)
 texture = ExtResource("2_tciqi")
 
@@ -46,6 +47,7 @@ build_mode = 1
 polygon = PackedVector2Array(-183.4, -94.8, -170.7, -107.1, -117.262, -107.142, 80.7, -107.3, 158.3, -73, 191.7, -39.6, 192.6, 33.1, 162.2, 63, 81.4, 97.5, -175.7, 98, -183.5, 89.9)
 
 [node name="NavigationRegion2D2" type="NavigationRegion2D" parent="."]
+z_index = -1
 navigation_polygon = SubResource("NavigationPolygon_yqgwh")
 
 [node name="MainBackground" type="Sprite2D" parent="NavigationRegion2D2"]
