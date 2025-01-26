@@ -29,6 +29,7 @@ script = ExtResource("1_p740o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
+z_index = -1
 scale = Vector2(10, 10)
 texture = ExtResource("2_tciqi")
 
@@ -49,6 +50,7 @@ build_mode = 1
 polygon = PackedVector2Array(-183.3, -104.1, -170.5, -116.8, 80.7, -116.1, 158.5, -82.9, 192.6, -47, 192.1, 36.4, 165, 72.9, 79.8, 114.3, -167.1, 110.4, -182.3, 95.1)
 
 [node name="NavigationRegion2D2" type="NavigationRegion2D" parent="."]
+z_index = -1
 navigation_polygon = SubResource("NavigationPolygon_yqgwh")
 
 [node name="MainBackground" type="Sprite2D" parent="NavigationRegion2D2"]
@@ -70,7 +72,7 @@ texture = ExtResource("3_bcxjj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D2/StaticBody2D2"]
 position = Vector2(1.3, 0)
-polygon = PackedVector2Array(-61.3, 37.9, 59.9, 38.7, 59.9, -48.9, 54.9, -53.9, -55.9, -53.9, -61, -49)
+polygon = PackedVector2Array(-61.3, 37.9, 59.9, 38.7, 61.6, -46.9, -62.3, -47.2)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="NavigationRegion2D2"]
 position = Vector2(1467, 177)
@@ -104,33 +106,21 @@ position = Vector2(191, 65)
 scale = Vector2(10, 10)
 texture = ExtResource("7_unpje")
 
-[node name="Player" parent="." instance=ExtResource("1_jh7pn")]
-position = Vector2(-1146, 13)
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_jh7pn")]
+position = Vector2(973, 389)
 scale = Vector2(10, 10)
 collision_mask = 29
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Cod" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
-position = Vector2(1641, 487)
+position = Vector2(-871, 906)
 scale = Vector2(10, 10)
 collision_layer = 1
 target_to_chase = NodePath("../Player")
 
 [node name="Cod2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
-position = Vector2(1065, -167)
-scale = Vector2(10, 10)
-collision_layer = 1
-target_to_chase = NodePath("../Player")
-
-[node name="Cod3" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
-position = Vector2(-321, 852)
-scale = Vector2(10, 10)
-collision_layer = 1
-target_to_chase = NodePath("../Player")
-
-[node name="Cod4" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
-position = Vector2(47.0002, -595)
+position = Vector2(-295, -633)
 scale = Vector2(10, 10)
 collision_layer = 1
 target_to_chase = NodePath("../Player")
@@ -138,7 +128,7 @@ target_to_chase = NodePath("../Player")
 [node name="HUD" parent="." instance=ExtResource("12_8fd6g")]
 
 [node name="Heart" parent="." instance=ExtResource("14_frw6p")]
-position = Vector2(-1602, -588)
+position = Vector2(234, 812)
 
 [node name="Heart2" parent="." instance=ExtResource("14_frw6p")]
 position = Vector2(-542, 772)
@@ -152,4 +142,3 @@ position = Vector2(1589, 266)
 shape = SubResource("RectangleShape2D_lexfj")
 
 [connection signal="body_entered" from="GoToNextLevel" to="." method="_on_go_to_next_level_body_entered"]
-position = Vector2(114, 848)
