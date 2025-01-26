@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgpbevtqh4pc1"]
+[gd_scene load_steps=8 format=3 uid="uid://bgpbevtqh4pc1"]
 
 [ext_resource type="Texture2D" uid="uid://csr7glocdmlr7" path="res://Sprites/Icons/Menus/Play Button.png" id="1_awcyc"]
 [ext_resource type="Texture2D" uid="uid://x84067snv3oh" path="res://Sprites/Icons/Menus/Selected Play Button.png" id="1_jtm8d"]
 [ext_resource type="Script" path="res://Code/Screens/button.gd" id="3_cs5dw"]
+[ext_resource type="Texture2D" uid="uid://t4j76h8b7ve0" path="res://Sprites/Maps/Level1/Main background.png" id="4_ynhj6"]
 
 [sub_resource type="Theme" id="Theme_y6fvi"]
 
@@ -24,16 +25,23 @@ offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 725.0
-offset_top = 556.0
-offset_right = 845.0
-offset_bottom = 624.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(955, 484)
 scale = Vector2(4, 4)
+texture = ExtResource("4_ynhj6")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 600.0
+offset_right = 880.0
+offset_bottom = 668.0
+scale = Vector2(3, 3)
 theme = SubResource("Theme_y6fvi")
 theme_override_styles/hover = SubResource("StyleBoxTexture_lfs2t")
 theme_override_styles/normal = SubResource("StyleBoxTexture_aha2y")
 action_mode = 0
 icon_alignment = 1
 script = ExtResource("3_cs5dw")
+
+[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
