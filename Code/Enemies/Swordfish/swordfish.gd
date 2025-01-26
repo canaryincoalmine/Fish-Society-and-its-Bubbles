@@ -43,6 +43,7 @@ func _physics_process(delta: float) -> void:
 			dashing = false
 			$AnimatedSprite2D.animation = "move"
 			$AnimatedSprite2D.play()
+		$Shadow.global_position = global_position + Vector2(0, 10)
 		move_and_slide()
 	
 func take_damage(damage):
