@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://cvyuqfe5r7ukf"]
+
+[ext_resource type="Texture2D" uid="uid://t4j76h8b7ve0" path="res://Sprites/Maps/Level1/Main background.png" id="1_wkpau"]
+[ext_resource type="Texture2D" uid="uid://dual5pdea00l6" path="res://Sprites/Icons/Menus/Game Over.png" id="2_lpry5"]
+[ext_resource type="Texture2D" uid="uid://bkbifnbcma3xc" path="res://Sprites/Icons/Menus/Selected Replay Button.png" id="3_1ylwh"]
+[ext_resource type="Texture2D" uid="uid://cbup8oks6gq1p" path="res://Sprites/Icons/Menus/Replay Button.png" id="4_wj0yy"]
+[ext_resource type="Script" path="res://Code/Screens/button.gd" id="5_rkbcy"]
+[ext_resource type="Texture2D" uid="uid://dnksm1qfrqhtx" path="res://Sprites/Icons/Menus/Selected Exit Button.png" id="6_8ejew"]
+[ext_resource type="Texture2D" uid="uid://cehg1n1yiar8k" path="res://Sprites/Icons/Menus/Exit Button.png" id="7_awy28"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtb6u"]
+texture = ExtResource("3_1ylwh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_segxy"]
+texture = ExtResource("4_wj0yy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fqguh"]
+texture = ExtResource("6_8ejew")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pk65i"]
+texture = ExtResource("7_awy28")
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(955, 484)
+scale = Vector2(4, 4)
+texture = ExtResource("1_wkpau")
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(944, 355)
+scale = Vector2(4, 4)
+texture = ExtResource("2_lpry5")
+
+[node name="Replay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 600.0
+offset_right = 940.0
+offset_bottom = 668.0
+scale = Vector2(2, 2)
+theme_override_styles/hover = SubResource("StyleBoxTexture_qtb6u")
+theme_override_styles/normal = SubResource("StyleBoxTexture_segxy")
+script = ExtResource("5_rkbcy")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 800.0
+offset_right = 940.0
+offset_bottom = 868.0
+scale = Vector2(2, 2)
+theme_override_styles/hover = SubResource("StyleBoxTexture_fqguh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pk65i")
+
+[connection signal="pressed" from="Replay" to="Replay" method="_on_replay_pressed"]
+[connection signal="pressed" from="Exit" to="Replay" method="_on_exit_pressed"]

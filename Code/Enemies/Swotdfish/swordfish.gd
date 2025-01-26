@@ -4,10 +4,11 @@ extends CharacterBody2D
 @export var target_to_chase: CharacterBody2D
 
 var id = "enemy"
-var health = 3
+var health = 5
 
 var dash_ready = true
 var dashing = false
+
 var dash_cooldown = 3
 var dash_variance = 0.5
 
@@ -33,10 +34,15 @@ func _physics_process(delta: float) -> void:
 		if dash_ready:
 			dash_ready = false
 			dashing = true
-			velocity = velocity*7
+			print("dashing")
+			velocity = velocity*15
 			$DashTimer.start()
-			await get_tree().create_timer(0.7).timeout
+			$AnimatedSprite2D.animation = "attack"
+			$AnimatedSprite2D.play()
+			await get_tree().create_timer(0.8).timeout
 			dashing = false
+			$AnimatedSprite2D.animation = "move"
+			$AnimatedSprite2D.play()
 		move_and_slide()
 	
 func take_damage(damage):
@@ -44,8 +50,6 @@ func take_damage(damage):
 	if health <= 0:
 		queue_free();
 
-
 func _on_dash_timer_timeout():
 	$DashTimer.wait_time = dash_cooldown + randf_range(-dash_variance, dash_variance)
 	dash_ready = true
-	

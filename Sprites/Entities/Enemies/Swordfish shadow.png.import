@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lfqtnx7m15fo"
-path="res://.godot/imported/Idle.png-8a7d4fc00a9234705ba6df58202c553a.ctex"
+uid="uid://bgbfl1nq3cd0t"
+path="res://.godot/imported/Swordfish shadow.png-74a6985c72580049300a953718c03ed7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Entities/octopus-jellyfish-shark-and-turtle-free-sprite-pixel-art/6/Idle.png"
-dest_files=["res://.godot/imported/Idle.png-8a7d4fc00a9234705ba6df58202c553a.ctex"]
+source_file="res://Sprites/Entities/Enemies/Swordfish shadow.png"
+dest_files=["res://.godot/imported/Swordfish shadow.png-74a6985c72580049300a953718c03ed7.ctex"]
 
 [params]
 

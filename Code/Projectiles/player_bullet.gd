@@ -10,11 +10,6 @@ func _on_ready():
 func _process(delta):
 	position += transform.x * SPEED * delta
 
-
-func _on_area_entered(area):
-	print("area entered")
-
-
 func _on_body_entered(body):
 	if (("id" in body) and body.id == "enemy"):
 		body.take_damage(damage)
