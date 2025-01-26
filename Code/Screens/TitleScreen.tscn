@@ -1,9 +1,39 @@
-[gd_scene format=3 uid="uid://bgpbevtqh4pc1"]
+[gd_scene load_steps=7 format=3 uid="uid://bgpbevtqh4pc1"]
+
+[ext_resource type="Texture2D" uid="uid://csr7glocdmlr7" path="res://Sprites/Icons/Menus/Play Button.png" id="1_awcyc"]
+[ext_resource type="Texture2D" uid="uid://x84067snv3oh" path="res://Sprites/Icons/Menus/Selected Play Button.png" id="1_jtm8d"]
+[ext_resource type="Script" path="res://Code/Screens/button.gd" id="3_cs5dw"]
+
+[sub_resource type="Theme" id="Theme_y6fvi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lfs2t"]
+texture = ExtResource("1_jtm8d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aha2y"]
+texture = ExtResource("1_awcyc")
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -32.0
+offset_right = 3.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 556.0
+offset_right = 845.0
+offset_bottom = 624.0
+scale = Vector2(4, 4)
+theme = SubResource("Theme_y6fvi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lfs2t")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aha2y")
+action_mode = 0
+icon_alignment = 1
+script = ExtResource("3_cs5dw")
