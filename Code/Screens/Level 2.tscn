@@ -4,11 +4,11 @@
 [ext_resource type="Script" path="res://Code/Screens/level_1.gd" id="1_p740o"]
 [ext_resource type="Texture2D" uid="uid://hr4j7wc20j3s" path="res://Sprites/Maps/Level1/Background filler.png" id="2_tciqi"]
 [ext_resource type="AudioStream" uid="uid://b2a5voaaaeocn" path="res://Audio/ocean_ambience_1.wav" id="4_icb3t"]
-[ext_resource type="Texture2D" uid="uid://bweuvyhl7vfpx" path="res://Sprites/Maps/Level2/Level 2.png" id="5_3fhie"]
+[ext_resource type="Texture2D" uid="uid://do6o17eyfch8n" path="res://Sprites/Maps/Level2/Level 2.png" id="5_3fhie"]
 [ext_resource type="Texture2D" uid="uid://cnl8aj5qh7qhp" path="res://Sprites/Maps/Level1/Ship top layer.png" id="6_tsaih"]
 [ext_resource type="PackedScene" uid="uid://74lnysi4i3b7" path="res://Code/Enemies/Cod/Cod.tscn" id="7_5okh8"]
 [ext_resource type="AudioStream" uid="uid://bi3m32ns5vnuq" path="res://Audio/main_soundtrack.wav" id="8_8biuh"]
-[ext_resource type="Texture2D" uid="uid://cldvm1hl74iho" path="res://Sprites/Maps/Level2/Level 2 top layer.png" id="10_ttq0s"]
+[ext_resource type="Texture2D" uid="uid://c41rcf2jw8kwi" path="res://Sprites/Maps/Level2/Level 2 top layer.png" id="10_ttq0s"]
 [ext_resource type="PackedScene" path="res://Code/Screens/hud.tscn" id="12_8fd6g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yqgwh"]
@@ -89,7 +89,7 @@ polygon = PackedVector2Array(932, 301, 1016, 301, 1012, -67, 926, -73)
 polygon = PackedVector2Array(1199, -20, 1554, -29, 1545, -240, 1217, -235, 1211, -292, 1579, -289, 1585, -241, 1585, 2, 1202, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_jh7pn")]
-position = Vector2(973, 389)
+position = Vector2(1185, -140)
 scale = Vector2(10, 10)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

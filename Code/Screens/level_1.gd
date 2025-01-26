@@ -10,3 +10,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+
+func _on_go_to_next_level_body_entered(body: Node2D) -> void:
+	if body.name == 'Player':
+		get_tree().change_scene_to_file('res://Code/Screens/Level 2.tscn')
