@@ -19,7 +19,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Global.player != null:
 		if raycast.is_colliding():
-			print("Moving")
 			move = 1
 		if navigation_agent.is_navigation_finished() and target_to_chase.global_position == navigation_agent.target_position:
 			return
@@ -44,10 +43,3 @@ func take_damage(damage):
 
 func _on_dash_timer_timeout():
 	dash_ready = true
-
-#func _on_detection_range_area_entered(area: Area2D) -> void:
-	#if area.has_method("get_parent"):
-		#var player = area.get_parent() 
-		#if "id" in player and player.id == "player":
-			#set_physics_process(true)
-			
