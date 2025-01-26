@@ -18,9 +18,13 @@ func get_input():
 	var mouse_distance = global_position.distance_to(mouse_position)
 	
 	if mouse_distance > 10:
+<<<<<<< HEAD
 			look_at(mouse_position)
 			$WalkSoundTimer.wait_time = 0.5
 			$WalkSound.volume_db = -17
+=======
+		look_at(mouse_position)
+>>>>>>> 5f20e6eb137dbdc1a8b522485bd9a4118bc04fa3
 	if mouse_distance > 30:
 		velocity = velocity.lerp(transform.x * SPEED, ACCELERATION)
 		sprite.play("move")
@@ -60,16 +64,18 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	reloaded = true
 
-
 func _on_walk_sound_timer_timeout():
 	# activates walk sound - timer is set to autostart
 	$WalkSound.play()
 	$WalkSoundTimer.start()
+<<<<<<< HEAD
 	
 func receiveHP(amount):
 	health += amount
 	Global.hud.update_simple(health)
 
+=======
+>>>>>>> 5f20e6eb137dbdc1a8b522485bd9a4118bc04fa3
 
 func _on_dash_timer_timeout():
 	dash_available = true
