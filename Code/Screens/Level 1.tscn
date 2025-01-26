@@ -19,13 +19,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-1931, -1145, 1985, -11
 [node name="Main" type="Node2D"]
 script = ExtResource("1_p740o")
 
-[node name="Player" parent="." instance=ExtResource("1_jh7pn")]
-top_level = true
-position = Vector2(973, 389)
-scale = Vector2(10, 10)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-
 [node name="UnderwaterStairsTopLayer" type="Sprite2D" parent="."]
 position = Vector2(1467, 179)
 scale = Vector2(10, 10)
@@ -83,4 +76,14 @@ texture = ExtResource("4_e5a6p")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/UnderwaterStairs/StaticBody2D"]
 polygon = PackedVector2Array(-19.5, 15.9, 18.9, 16.2, 18.8, -13.2, -19.7, -13.3, -19.5, -11, 12.3, 5.4, 14.4, 11.7, -19.5, 11.7)
 
-[node name="Cod" parent="." instance=ExtResource("7_5okh8")]
+[node name="Player" parent="." instance=ExtResource("1_jh7pn")]
+top_level = true
+position = Vector2(973, 389)
+scale = Vector2(10, 10)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Cod" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("7_5okh8")]
+position = Vector2(900, 0)
+scale = Vector2(10, 10)
+target_to_chase = NodePath("../Player")
