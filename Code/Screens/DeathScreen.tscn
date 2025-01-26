@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Code/Screens/button.gd" id="5_rkbcy"]
 [ext_resource type="Texture2D" uid="uid://dnksm1qfrqhtx" path="res://Sprites/Icons/Menus/Selected Exit Button.png" id="6_8ejew"]
 [ext_resource type="Texture2D" uid="uid://cehg1n1yiar8k" path="res://Sprites/Icons/Menus/Exit Button.png" id="7_awy28"]
-[ext_resource type="AudioStream" uid="uid://dwj1lhiw4rrot" path="res://Audio/pufferfish carrot processed.wav" id="9_8rkof"]
+[ext_resource type="AudioStream" uid="uid://ccpo8enq6i7ts" path="res://Audio/Lego yoda death sound.mp3" id="9_8letb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtb6u"]
 texture = ExtResource("3_1ylwh")
@@ -64,8 +64,8 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_fqguh")
 theme_override_styles/normal = SubResource("StyleBoxTexture_pk65i")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_8rkof")
-volume_db = -10.554
+stream = ExtResource("9_8letb")
+volume_db = 7.0
 
 [connection signal="pressed" from="Replay" to="Replay" method="_on_replay_pressed"]
 [connection signal="pressed" from="Exit" to="Replay" method="_on_exit_pressed"]

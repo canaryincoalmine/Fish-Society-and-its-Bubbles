@@ -103,10 +103,9 @@ func take_damage(damage):
 	var new_health = health - damage
 	health = max(new_health, 0)
 	Global.hud.update_simple(health)
+	$DamageSound.play()
 	if (health == 0):
 		die()
 		
 func die():
-	#$DeathSound.play()
-	#await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://Code/Screens/DeathScreen.tscn")

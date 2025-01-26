@@ -4,11 +4,11 @@
 [ext_resource type="Script" path="res://Code/Screens/level_1.gd" id="1_p740o"]
 [ext_resource type="Texture2D" uid="uid://hr4j7wc20j3s" path="res://Sprites/Maps/Level1/Background filler.png" id="2_tciqi"]
 [ext_resource type="AudioStream" uid="uid://b2a5voaaaeocn" path="res://Audio/ocean_ambience_1.wav" id="4_icb3t"]
-[ext_resource type="Texture2D" uid="uid://jdayqxk8odvd" path="res://Sprites/Maps/Level2/Level 2.png" id="5_3fhie"]
+[ext_resource type="Texture2D" path="res://Sprites/Maps/Level2/Level 2.png" id="5_3fhie"]
 [ext_resource type="Texture2D" uid="uid://cnl8aj5qh7qhp" path="res://Sprites/Maps/Level1/Ship top layer.png" id="6_tsaih"]
 [ext_resource type="PackedScene" uid="uid://74lnysi4i3b7" path="res://Code/Enemies/Cod/Cod.tscn" id="7_5okh8"]
 [ext_resource type="AudioStream" uid="uid://bi3m32ns5vnuq" path="res://Audio/main_soundtrack.wav" id="8_8biuh"]
-[ext_resource type="Texture2D" uid="uid://ddnwu83vadg0i" path="res://Sprites/Maps/Level2/Level 2 top layer.png" id="10_ttq0s"]
+[ext_resource type="Texture2D" path="res://Sprites/Maps/Level2/Level 2 top layer.png" id="10_ttq0s"]
 [ext_resource type="PackedScene" uid="uid://dcp15oo1olg6d" path="res://Code/Enemies/Swordfish/swordfish.tscn" id="11_bopol"]
 [ext_resource type="PackedScene" path="res://Code/Screens/hud.tscn" id="12_8fd6g"]
 
@@ -114,16 +114,16 @@ target_to_chase = NodePath("../Player")
 
 [node name="HUD" parent="." instance=ExtResource("12_8fd6g")]
 
-[node name="Level2TopLayer" type="Sprite2D" parent="."]
-position = Vector2(0.000488281, 0)
-scale = Vector2(10, 10)
-texture = ExtResource("10_ttq0s")
-
 [node name="Swordfish" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("11_bopol")]
 position = Vector2(1120, 687)
 scale = Vector2(8, 8)
 collision_mask = 3
 target_to_chase = NodePath("../Player")
+
+[node name="Level2TopLayer" type="Sprite2D" parent="."]
+position = Vector2(0.000488281, 0)
+scale = Vector2(10, 10)
+texture = ExtResource("10_ttq0s")
 
 [node name="WinCondition" type="Area2D" parent="."]
 collision_layer = 16
