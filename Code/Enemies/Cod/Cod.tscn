@@ -1,7 +1,47 @@
-[gd_scene format=3 uid="uid://74lnysi4i3b7"]
+[gd_scene load_steps=7 format=3 uid="uid://74lnysi4i3b7"]
+
+[ext_resource type="Texture2D" uid="uid://cm3kc8tyy24nq" path="res://Sprites/Entities/Enemies/Cod swim.png" id="1_iuvha"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7yoc"]
+atlas = ExtResource("1_iuvha")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fijs0"]
+atlas = ExtResource("1_iuvha")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0slc"]
+atlas = ExtResource("1_iuvha")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1om0"]
+atlas = ExtResource("1_iuvha")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pimfg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7yoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fijs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0slc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1om0")
+}],
+"loop": true,
+"name": &"move",
+"speed": 8.0
+}]
 
 [node name="Cod" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pimfg")
+animation = &"move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
