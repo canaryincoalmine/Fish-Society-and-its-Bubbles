@@ -40,16 +40,20 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qbvts"]
-radius = 29.0
+radius = 21.0
 
-[node name="Heart" type="CharacterBody2D"]
+[node name="Heart" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_jiwn3")
 
 [node name="HeartAnimation" type="AnimatedSprite2D" parent="."]
-scale = Vector2(6, 6)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_scdk5")
 frame = 1
 frame_progress = 0.678421
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qbvts")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

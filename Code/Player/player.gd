@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 var reloaded = true
 var dash_available = true
+var health = 1
 
 const BULLET_SCENE = preload("res://Code/Projectiles/Player_Bullet.tscn")
 
@@ -18,9 +19,13 @@ func get_input():
 	
 	if mouse_distance > 10:
 			look_at(mouse_position)
+			$WalkSoundTimer.wait_time = 0.5
+			$WalkSound.volume_db = -17
 	if mouse_distance > 30:
 		velocity = velocity.lerp(transform.x * SPEED, ACCELERATION)
 		sprite.play("move")
+		$WalkSoundTimer.wait_time = 0.3
+		$WalkSound.volume_db = -12
 	else:
 		velocity = velocity.lerp(Vector2.ZERO, FRICTION)
 		sprite.play("idle")	
@@ -61,6 +66,9 @@ func _on_walk_sound_timer_timeout():
 	$WalkSound.play()
 	$WalkSoundTimer.start()
 	
+func receiveHP(amount):
+	health += amount
+	Global.hud.update_simple(health)
 
 
 func _on_dash_timer_timeout():
