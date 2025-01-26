@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bhyod40y51n4o"]
+[gd_scene load_steps=16 format=3 uid="uid://bhyod40y51n4o"]
 
 [ext_resource type="PackedScene" uid="uid://c1atry1s104y0" path="res://Code/Player/Player.tscn" id="1_jh7pn"]
 [ext_resource type="Script" path="res://Code/Screens/level_1.gd" id="1_p740o"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dhhp18k04y1hh" path="res://Sprites/Maps/Level1/Deck room top layer.png" id="7_unpje"]
 [ext_resource type="AudioStream" uid="uid://bi3m32ns5vnuq" path="res://Audio/main_soundtrack.wav" id="8_8biuh"]
 [ext_resource type="PackedScene" uid="uid://dqhkrfhkhdwoh" path="res://Code/Screens/hud.tscn" id="12_8fd6g"]
+[ext_resource type="PackedScene" uid="uid://cva2gw57wx4ko" path="res://Code/Pickups/heart.tscn" id="14_frw6p"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_eeqhf"]
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1834, -659, -1700, -807, 808, -809, 1581, -468, 1918, -132, 1920, 596, 1648.84, 878.543, 810, 1247, -1746, 1242, -1835, 1169)])
@@ -105,3 +106,6 @@ collision_layer = 1
 target_to_chase = NodePath("../Player")
 
 [node name="HUD" parent="." instance=ExtResource("12_8fd6g")]
+
+[node name="Heart" parent="." instance=ExtResource("14_frw6p")]
+position = Vector2(234, 812)
